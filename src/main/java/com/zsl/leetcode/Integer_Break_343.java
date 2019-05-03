@@ -1,8 +1,5 @@
 package com.zsl.leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Create by ZengShiLin on 2019-04-21
  * LeetCode 第343题
@@ -12,19 +9,17 @@ import java.util.Map;
  */
 public class Integer_Break_343 {
 
-    Map<Integer, Integer> memo = new HashMap<>();
+
+    int[] memo;
 
     public static void main(String[] args) {
         Integer_Break_343 run = new Integer_Break_343();
-        long time = System.nanoTime();
-        System.out.println("拆分的最大值是：" + run.solvetion(6));
-        System.out.println("执行时间（HashMap创建占用大部分时间）:" + (System.nanoTime() - time) + "纳秒");
     }
 
 
     private int solvetion(int n) {
         //初始化缓存大小
-        this.memo = new HashMap<>(n);
+        this.memo = this.initializeArray(n, -1);
         return this.breakIntegerDp(n);
     }
 
@@ -38,18 +33,16 @@ public class Integer_Break_343 {
         if (1 == n) {
             return 1;
         }
-
         Integer res;
-        if (null != (res = memo.get(n))) {
+        if (null != (res = memo[n])) {
             return res;
         }
-
         //循环的时候需要给res一个默认值
         res = -1;
         for (int i = 1; i <= n - 1; i++) {
             res = this.max3(res, i * (n - i), i * breakInteger(n - i));
         }
-        memo.put(n, res);
+        memo[n] = res;
         return res;
     }
 
@@ -64,7 +57,7 @@ public class Integer_Break_343 {
      * @return
      */
     private int breakIntegerDp(Integer n) {
-        int[] memo = this.initializeArray(n+1, -1);
+        int[] memo = this.initializeArray(n + 1, -1);
         memo[1] = 1;
         for (int i = 2; i <= n; i++) {
             for (int j = 1; j <= i - 1; j++) {
