@@ -7,16 +7,16 @@ package com.zsl.leetcode;
  * @author Shinly
  */
 public class House_Robber_198 {
-    //记忆化搜索
+    //记忆化搜索（保存每个分路的计算结果）
     int[] memo;
-
     public static void main(String[] args) {
         House_Robber_198 run = new House_Robber_198();
-        System.out.println("抢劫获得最大收益：" + run.rob(new int[]{1, 3, 4, 5}));
+        System.out.println("抢劫获得最大收益：" + run.rob(new int[]{2, 7, 9, 3,1}));
     }
 
 
     private int rob(int[] houses) {
+        //一定要给定初始值
         memo = this.initializeArray(houses.length, -1);
         return this.tryRob(houses, 0);
     }
@@ -40,7 +40,7 @@ public class House_Robber_198 {
     }
 
     /**
-     * 初始化数组
+     * 初始化数组(初始化通过数组，并且赋值成默认值)
      *
      * @param n     容量大小
      * @param value 值
@@ -53,6 +53,4 @@ public class House_Robber_198 {
         }
         return arrays;
     }
-
-
 }

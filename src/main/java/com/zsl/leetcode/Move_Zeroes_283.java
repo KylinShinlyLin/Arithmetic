@@ -1,5 +1,9 @@
 package com.zsl.leetcode;
 
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Create by ZengShiLin on 2019-05-04
  */
@@ -55,6 +59,10 @@ public class Move_Zeroes_283 {
                 nums[k++] = nums[i];
             }
         }
+        //将末尾填充为0
+        for (int i = k; i < nums.length; i++) {
+            nums[i] = 0;
+        }
     }
 
 
@@ -83,6 +91,11 @@ public class Move_Zeroes_283 {
 
     public static void main(String[] args) {
 
+        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(4, 5, 0L,
+                TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<>()
+        );
+        poolExecutor.execute(() -> System.out.println("异步开启线程执行的内容"));
     }
 
 
