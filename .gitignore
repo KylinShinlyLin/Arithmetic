@@ -10,6 +10,7 @@
 *.war
 *.ear
 .idea/*
+.idea/
 *.iml
 .tgitconfig
 *target/
@@ -21,15 +22,6 @@
 hs_err_pid*
 .project
 .settings/
-finance-service-api/.classpath
-finance-service-api/.project
-finance-service-api/.settings/
-finance-service-biz/.classpath
-finance-service-biz/.project
-finance-service-biz/.settings/
-finance-service-client/.classpath
-finance-service-client/.project
-finance-service-client/.settings/
-finance-service-publish/.classpath
-finance-service-publish/.project
-finance-service-publish/.settings/
+Arithmetic/.classpath
+Arithmetic/.project
+Arithmetic/.settings/
