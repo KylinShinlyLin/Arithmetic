@@ -131,10 +131,7 @@ public class BinaryTree<V> {
 
                 }
             }
-
         }
-
-
     }
 
     /**
@@ -163,6 +160,26 @@ public class BinaryTree<V> {
         postOrderRecursionWalk(node.left);
         postOrderRecursionWalk(node.right);
         System.out.println(node.key + "," + node.value);
+    }
+
+
+    /**
+     * 搜索(类比 二分查找)
+     *
+     * @param key 根据key搜索节点
+     * @return 找到的节点
+     */
+    public TreeNode findNode(Integer key) {
+        TreeNode temp = this.root;
+        while (null != temp) {
+            if (key.equals(temp.getKey()))
+                return temp;
+            if (key < temp.getKey())
+                temp = temp.getLeft();
+            else
+                temp = temp.getRight();
+        }
+        return null;
     }
 
 
@@ -222,6 +239,7 @@ public class BinaryTree<V> {
         // tree.preOrderTraversal();
         // 后序遍历
         // tree.postOrderTraversal();
+        System.out.println("查询到的结果:" + tree.findNode(10));
     }
 
 }
