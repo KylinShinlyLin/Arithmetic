@@ -29,6 +29,12 @@ public class BinaryTree<V> {
      */
     public TreeNode putVal(Integer key, V value) {
         TreeNode<V> t = this.root;
+        TreeNode<V> exist = this.findNode(key);
+        if (null != exist) {
+            //替换当前的值覆盖
+            exist.value = value;
+            return exist;
+        }
         TreeNode<V> x = new TreeNode<>(key, value);
         TreeNode<V> p = null;
         //循环找到当前的parent
@@ -322,6 +328,7 @@ public class BinaryTree<V> {
     public static void main(String[] args) {
         BinaryTree<String> tree = new BinaryTree<>();
         tree.putVal(3, "这个是3");
+        tree.putVal(3, "这个是3后置放入");
         tree.putVal(4, "这个是4");
         tree.putVal(1, "这个是1");
         tree.putVal(5, "这个是5");

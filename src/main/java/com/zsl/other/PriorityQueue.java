@@ -71,8 +71,9 @@ public class PriorityQueue {
                 childIndex++;
             }
             // 如果父节点大于任何一个孩子的值，直接跳出
-            if (temp >= array[childIndex])
+            if (temp >= array[childIndex]) {
                 break;
+            }
             //无需真正交换，单向赋值即可
             array[parentIndex] = array[childIndex];
             parentIndex = childIndex;
