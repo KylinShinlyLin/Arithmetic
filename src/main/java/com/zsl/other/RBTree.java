@@ -116,12 +116,45 @@ public class RBTree<V> {
 
     /**
      * 红黑树修复操作
+     * 要处理根节点的情况
      *
      * @param z 需要插入的结点
      * @return 修复结果
      */
     private boolean insertFixUp(TreeNode<V> z) {
         //当插入结点是红色就一直循环
+        for (TreeNode<V> zp, zpp, zppr, zppl; ; ) {
+            if ((zp = z.parent) == null) {
+                z.red = false;
+                //z就是根节点
+                this.root = z;
+            } else if (!zp.red || (zpp = zp.parent) == null) {
+                return true;
+            }
+            if (zp == (zppl = zpp.left)) {
+                if ((zppr = zpp.right) != null && zppr.red) {
+                    zppr.red = false;
+                    zp.red = false;
+                    zpp.red = true;
+                    z = zpp;
+                } else {
+                    if (z == zp.right) {
+                        this.leftRotate(z = zp);
+                        zpp = (zp = z.parent) == null ? null : zp.parent;
+                    }
+                    if (zp != null) {
+                        zp.red = false;
+                        if (zpp != null) {
+                            zpp.red = true;
+                            this.rightRotate(zpp);
+                        }
+                    }
+                }
+            }
+
+
+        }
+
         while (z.parent.red) {
             //插入结点的父亲本身是左结点
             if (z.parent == z.parent.parent.left) {
@@ -132,13 +165,55 @@ public class RBTree<V> {
                     z.parent.red = false;
                     y.red = false;
                     z.parent.parent.red = true;
+                    //当前子树冲突解决，但是父亲节点冲突可能变化需要向上转移
                     z = z.parent.parent;
+                } else {
+                    if (z == z.parent.right) {
+                        //由于不能变色，向上转移，然后左旋
+                        z = z.parent;
+                        //左旋
+                        this.leftRotate(z);
+                    }
+                    if (z.parent != null) {
+                        z.parent.red = false;
+                        if (z.parent.parent != null) {
+                            z.parent.parent.red = true;
+                            //右旋
+                            this.rightRotate(z.parent.parent);
+                        }
+                    }
                 }
-                //TODO
+            } else {
+                //去看其右结点
+                TreeNode<V> y = z.parent.parent.left;
+                //重新染色(黑色结点下移)
+                if (y.red) {
+                    z.parent.red = false;
+                    y.red = false;
+                    z.parent.parent.red = true;
+                    //当前子树冲突解决，但是父亲节点冲突可能变化需要向上转移
+                    z = z.parent.parent;
+                } else {
+                    if (z == z.parent.left) {
+                        //由于不能变色，向上转移，然后左旋
+                        z = z.parent;
+                        //左旋
+                        this.rightRotate(z);
+                    }
+                    if (z.parent != null) {
+                        z.parent.red = false;
+                        if (z.parent.parent != null) {
+                            z.parent.parent.red = true;
+                            //右旋
+                            this.leftRotate(z.parent.parent);
+                        }
+                    }
+                }
             }
-            //TODO
+            //无条件对根节点染黑
+            this.root.red = false;
         }
-        return false;
+        return true;
     }
 
     /**
