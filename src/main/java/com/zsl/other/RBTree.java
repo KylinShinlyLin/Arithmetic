@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Stack;
+
 /**
  * @program: arithmetic
  * @description: 红黑树实现
@@ -13,6 +15,21 @@ import lombok.NoArgsConstructor;
  **/
 public class RBTree<V> {
 
+    /**
+     * 哨兵结点
+     */
+    private TreeNode<V> sentinel;
+
+    /**
+     * 树的构造函数，构造的时候构造哨兵结点
+     */
+    public RBTree() {
+        this.sentinel = new TreeNode<>(null, null, null);
+        this.sentinel.parent = this.sentinel;
+        this.sentinel.left = this.sentinel;
+        this.sentinel.right = this.sentinel;
+        this.root = this.sentinel;
+    }
 
     /**
      * 根节点
@@ -35,7 +52,7 @@ public class RBTree<V> {
         private V value;
 
         /**
-         * 左节点
+         * 左节点(默认给与一个哨兵结点)
          */
         private TreeNode<V> left;
 
@@ -50,13 +67,20 @@ public class RBTree<V> {
         private TreeNode<V> parent;
 
         /**
-         * 是否红色节点（新节点默认都是红色）
+         * 是否红色节点
          */
-        private boolean red = true;
+        private boolean red = false;
 
-        TreeNode(Integer key, V value) {
+        /**
+         * @param key      健
+         * @param value    值
+         * @param sentinel 哨兵
+         */
+        TreeNode(Integer key, V value, TreeNode<V> sentinel) {
             this.key = key;
             this.value = value;
+            this.right = sentinel;
+            this.left = sentinel;
         }
 
 
@@ -75,8 +99,7 @@ public class RBTree<V> {
      * @return 是否插入成功
      */
     public boolean putVal(Integer key, V value) {
-
-        return false;
+        return this.balanceInsert(new TreeNode<>(key, value, this.sentinel));
     }
 
     /**
@@ -86,9 +109,9 @@ public class RBTree<V> {
      * @return 是否插入成功
      */
     private boolean balanceInsert(TreeNode<V> z) {
-        TreeNode<V> y = null, x = this.root;
+        TreeNode<V> y = this.sentinel, x = this.root;
         //类似于二叉树的方式应该放入的父亲结点
-        while (x != null) {
+        while (x != this.sentinel) {
             y = x;
             if (z.key < x.key) {
                 x = x.left;
@@ -98,8 +121,10 @@ public class RBTree<V> {
         }
         z.parent = y;
         //如果整个树都是空的那新结点就是根结点
-        if (y == null) {
+        if (y == sentinel) {
             this.root = z;
+            //如果是跟结点直接返回成功
+            return true;
         } else if (z.key < y.key) {
             //小于父亲就在右边
             y.left = z;
@@ -107,8 +132,8 @@ public class RBTree<V> {
             //大于父亲就在左边
             y.right = z;
         }
-        z.left = null;
-        z.right = null;
+        z.left = this.sentinel;
+        z.right = this.sentinel;
         z.red = true;
         //修复红黑树的平衡性
         return this.insertFixUp(z);
@@ -123,43 +148,31 @@ public class RBTree<V> {
      */
     private boolean insertFixUp(TreeNode<V> z) {
         //当插入结点是红色就一直循环
-        for (TreeNode<V> zp, zpp, zppr, zppl; ; ) {
-            if ((zp = z.parent) == null) {
-                z.red = false;
-                //z就是根节点
-                this.root = z;
-            } else if (!zp.red || (zpp = zp.parent) == null) {
-                return true;
-            }
-            if (zp == (zppl = zpp.left)) {
-                if ((zppr = zpp.right) != null && zppr.red) {
-                    zppr.red = false;
-                    zp.red = false;
-                    zpp.red = true;
-                    z = zpp;
-                } else {
-                    if (z == zp.right) {
-                        this.leftRotate(z = zp);
-                        zpp = (zp = z.parent) == null ? null : zp.parent;
-                    }
-                    if (zp != null) {
-                        zp.red = false;
-                        if (zpp != null) {
-                            zpp.red = true;
-                            this.rightRotate(zpp);
-                        }
-                    }
-                }
-            }
-
-
-        }
-
         while (z.parent.red) {
-            //插入结点的父亲本身是左结点
-            if (z.parent == z.parent.parent.left) {
+            //插入结点的父亲是左结点
+            if (z.parent == z.parent.parent.getLeft()) {
                 //去看其右结点
-                TreeNode<V> y = z.parent.parent.right;
+                TreeNode<V> y = z.parent.parent.getRight();
+                //如果叔结点满足红色，重新染色(黑色结点下移)
+                if (y.red) {
+                    z.parent.red = false;
+                    y.red = false;
+                    z.parent.parent.red = true;
+                    //当前子树冲突解决，但是父亲节点冲突可能变化，冲突问题向上转移
+                    z = z.parent.parent;
+                } else if (z == z.parent.getRight()) { //如果，插入结点位于父亲结点的右边
+                    //由于不能变色，向上转移，然后左旋
+                    z = z.parent;
+                    //左旋
+                    this.leftRotate(z);
+                }
+                z.parent.red = false;
+                z.parent.parent.red = true;
+                //右旋
+                this.rightRotate(z.parent.parent);
+            } else {//插入结点的父亲是右结点
+                //去看其右结点
+                TreeNode<V> y = z.parent.parent.getLeft();
                 //重新染色(黑色结点下移)
                 if (y.red) {
                     z.parent.red = false;
@@ -167,52 +180,19 @@ public class RBTree<V> {
                     z.parent.parent.red = true;
                     //当前子树冲突解决，但是父亲节点冲突可能变化需要向上转移
                     z = z.parent.parent;
-                } else {
-                    if (z == z.parent.right) {
-                        //由于不能变色，向上转移，然后左旋
-                        z = z.parent;
-                        //左旋
-                        this.leftRotate(z);
-                    }
-                    if (z.parent != null) {
-                        z.parent.red = false;
-                        if (z.parent.parent != null) {
-                            z.parent.parent.red = true;
-                            //右旋
-                            this.rightRotate(z.parent.parent);
-                        }
-                    }
+                } else if (z == z.parent.getLeft()) {
+                    //由于不能变色，向上转移，然后左旋
+                    z = z.parent;
+                    //左旋
+                    this.rightRotate(z);
                 }
-            } else {
-                //去看其右结点
-                TreeNode<V> y = z.parent.parent.left;
-                //重新染色(黑色结点下移)
-                if (y.red) {
-                    z.parent.red = false;
-                    y.red = false;
-                    z.parent.parent.red = true;
-                    //当前子树冲突解决，但是父亲节点冲突可能变化需要向上转移
-                    z = z.parent.parent;
-                } else {
-                    if (z == z.parent.left) {
-                        //由于不能变色，向上转移，然后左旋
-                        z = z.parent;
-                        //左旋
-                        this.rightRotate(z);
-                    }
-                    if (z.parent != null) {
-                        z.parent.red = false;
-                        if (z.parent.parent != null) {
-                            z.parent.parent.red = true;
-                            //右旋
-                            this.leftRotate(z.parent.parent);
-                        }
-                    }
-                }
+                z.parent.red = false;
+                z.parent.parent.red = true;
+                this.rightRotate(z.parent.parent);
             }
-            //无条件对根节点染黑
-            this.root.red = false;
         }
+        //无条件对根节点染黑
+        this.root.red = false;
         return true;
     }
 
@@ -224,12 +204,12 @@ public class RBTree<V> {
     private void leftRotate(TreeNode<V> node) {
         TreeNode<V> y = node.right;
         node.right = y.left;
-        if (y.left != null) {
+        if (y.left != this.sentinel) {
             y.left.parent = node;
         }
         y.parent = node.parent;
         //x就是根结点 所以 y也要变成根结点
-        if (node.parent == null) {
+        if (node.parent == this.sentinel) {
             this.root = y;
         } else if (node == node.parent.left) {
             //x 在左边 y 替换 x 的位置
@@ -254,12 +234,12 @@ public class RBTree<V> {
         //获取当前结点的左结点为x
         TreeNode<V> x = node.left;
         //当前结点的左结点不为空并且当前结点左结点的右结点不为空
-        if (x != null && x.right != null) {
+        if (x.right != this.sentinel) {
             x.right.parent = node;
             node.left = x.right;
         }
         //x就是根结点 所以 y也要变成根结点
-        if (node.parent == null) {
+        if (node.parent == this.sentinel) {
             this.root = x;
         } else if (node == node.parent.left) {
             //x 在左边 y 替换 x 的位置
@@ -268,7 +248,7 @@ public class RBTree<V> {
             //x 在右边 y 替换 x 的位置
             node.parent.right = x;
         }
-        if (x != null) {
+        if (x != this.sentinel) {
             //当前结点的左结点替换当前结点(x不为空的情况下)
             x.parent = node.parent;
             //x的右边结点替换为当前被旋转的结点
@@ -276,4 +256,54 @@ public class RBTree<V> {
         }
     }
 
+    /**
+     * 中序遍历
+     */
+    public void inOrderTraversal() {
+        //递归中序遍历
+        //this.inOrderRecursionWalk(this.root); 非递归辅助栈遍历
+        this.inOrderWalk(this.root);
+        //非递归传统方式遍历
+    }
+
+    /**
+     * 中序遍历非递归实现（辅助栈）
+     *
+     * @param root 根节点
+     */
+    private void inOrderWalk(TreeNode<V> root) {
+        TreeNode<V> temp = root;
+        //用来实现非递归的栈数据结构（该栈底层使用的是Vector链表结构,避免栈溢出的情况）
+        Stack<TreeNode<V>> stack = new Stack<>();
+        //遍历左边
+        while (null != temp || !stack.isEmpty()) {
+            while (null != temp) {
+                stack.push(temp);
+                temp = temp.getLeft();
+            }
+            if (!stack.isEmpty()) {
+                temp = stack.pop();
+                if (null != temp) {
+                    System.out.println(temp.key + "," + temp.value);
+                    //转向
+                    temp = temp.getRight();
+                }
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        RBTree<String> tree = new RBTree<>();
+        System.out.println(tree.putVal(7, "这个值是7"));
+        System.out.println(tree.putVal(3, "这个值是3"));
+        System.out.println(tree.putVal(10, "这个值是10"));
+        System.out.println(tree.putVal(8, "这个值是8"));
+        System.out.println(tree.putVal(18, "这个值是18"));
+        System.out.println(tree.putVal(11, "这个值是11"));
+        System.out.println(tree.putVal(22, "这个值是22"));
+        System.out.println(tree.putVal(15, "这个值是15"));
+        System.out.println(tree.putVal(26, "这个值是26"));
+        tree.inOrderTraversal();
+    }
 }
