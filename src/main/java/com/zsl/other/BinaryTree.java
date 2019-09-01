@@ -151,7 +151,7 @@ public class BinaryTree<V> {
      *
      * @param node 节点
      */
-    private void preOrderRecursionWalk(TreeNode node) {
+    private void preOrderRecursionWalk(TreeNode<V> node) {
         if (null == node) {
             return;
         }
@@ -160,12 +160,37 @@ public class BinaryTree<V> {
         preOrderRecursionWalk(node.right);
     }
 
+
+    /**
+     * 前序遍历非递归实现
+     *
+     * @param node 结点
+     */
+    private void preOrderWalk(TreeNode<V> node) {
+        if (this.root == null) {
+            return;
+        }
+        // 栈
+        Stack<TreeNode<V>> stack = new Stack<>();
+        stack.push(this.root);
+        while (!stack.isEmpty()) {
+            TreeNode<V> tempNode = stack.pop();
+            System.out.println("这个是:" + tempNode.toString());
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
+    }
+
     /**
      * 后序遍历
      *
      * @param node 节点
      */
-    private void postOrderRecursionWalk(TreeNode node) {
+    private void postOrderRecursionWalk(TreeNode<V> node) {
         if (null == node) {
             return;
         }
