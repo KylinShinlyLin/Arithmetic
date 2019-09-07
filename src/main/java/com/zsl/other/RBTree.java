@@ -443,7 +443,7 @@ public class RBTree<V> {
             y.left.parent = y;
             y.red = z.red;
         }
-        if (!originalRed) {
+        if (!originalRed) { //如果删除的是红色结点，不会破坏红黑树规则
             //修复可能破坏平衡性的 x 结点
             this.rb_delete_fix_up(x);
         }
