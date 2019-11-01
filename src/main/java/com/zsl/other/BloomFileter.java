@@ -27,7 +27,7 @@ public class BloomFileter implements Serializable {
      *
      * @param dataCount 预期处理的数据规模，如预期用于处理1百万数据的查重，这里则填写1000000
      */
-    public BloomFileter(int dataCount) {
+    BloomFileter(int dataCount) {
         this(MisjudgmentRate.HIGH, dataCount, null);
     }
 
@@ -38,7 +38,7 @@ public class BloomFileter implements Serializable {
      *                      当过滤器使用率达到100%时，则无论传入什么数据，都会认为在数据已经存在了
      *                      当希望过滤器使用率达到80%时自动清空重新使用，则传入0.8
      */
-    public BloomFileter(MisjudgmentRate rate, int dataCount, Double autoClearRate) {
+    BloomFileter(MisjudgmentRate rate, int dataCount, Double autoClearRate) {
         long bitSize = rate.seeds.length * dataCount;
         if (bitSize < 0 || bitSize > Integer.MAX_VALUE) {
             throw new RuntimeException("位数太大溢出了，请降低误判率或者降低数据大小");
@@ -182,7 +182,6 @@ public class BloomFileter implements Serializable {
      * <p>
      * 32个位误判率大概是0.00000021167340
      *
-     * @author lianghaohui
      */
     public enum MisjudgmentRate {
         // 这里要选取质数，能很好的降低错误率
