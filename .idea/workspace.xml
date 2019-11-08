@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1393072-dbd2-44dc-8a50-67d1f2ea8c53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/ConstVal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/DataSourceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/DateType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/DbType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/FileOutConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/FileTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/GlobalConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/IdType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/StrategyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/builder/ExecuteBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/rules/DbColumnType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/rules/IColumnType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/rules/NamingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/type/ITypeConvert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/type/MySqlTypeConvert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/constants/StringPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/querys/AbstractDbQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/querys/IDbQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/querys/MySqlQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/sql/StringEscape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/table/FieldFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/table/TableField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/table/TableFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/table/TableInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/utils/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/FreeMarkerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/builder/ExecuteBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/config/builder/ExecuteBuilder.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +37,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -151,7 +127,7 @@
       <workItem from="1571670685471" duration="1789000" />
       <workItem from="1572604084339" duration="1500000" />
       <workItem from="1572837440713" duration="39000" />
-      <workItem from="1573200842382" duration="7775000" />
+      <workItem from="1573200842382" duration="8360000" />
     </task>
     <task id="LOCAL-00001" summary="二叉树的删除操作">
       <created>1566024385047</created>
@@ -202,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572604842342</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="代码生成器">
+      <created>1573209007225</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1573209007225</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +223,8 @@
     <MESSAGE value="红黑树平衡插入" />
     <MESSAGE value="红黑树删除修复" />
     <MESSAGE value="时间轮定时器，布隆过滤器" />
-    <option name="LAST_COMMIT_MESSAGE" value="时间轮定时器，布隆过滤器" />
+    <MESSAGE value="代码生成器" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码生成器" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

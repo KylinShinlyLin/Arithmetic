@@ -45,10 +45,20 @@ public class ExecuteBuilder {
      */
     private Connection connection;
 
+    /**
+     * FreeMarker模板
+     */
     private Configuration configuration;
 
-
+    /**
+     * 文件输出配置
+     */
     private FileOutConfig fileOutConfig;
+
+    /**
+     * 模板路径配置
+     */
+    private FreeMarkerConfig freeMarkerConfig;
 
     /**
      * <p>
@@ -247,12 +257,12 @@ public class ExecuteBuilder {
             Map<String, Map<FileTypeEnum, String>> allPathInfo = this.getPathInfo();
             for (TableInfo tableInfo : tableInfoList) {
                 Map<FileTypeEnum, String> pathInfo = allPathInfo.get(tableInfo.getName());
-                Map<String, Object> objectMap = getObjectMap(tableInfo);
+                Map<String, Object> objectMap = this.getObjectMap(tableInfo);
                 Map<FileTypeEnum, String> templatePathMap = this.getTemplatePathMap();
                 for (Map.Entry<FileTypeEnum, String> temp : pathInfo.entrySet()) {
                     checkNotExistCreate(temp.getValue());
                     //TODO freemarker 模板
-                    writer(objectMap, templatePathMap.get(temp.getKey()), fileOutConfig.outputFile(tableInfo) + temp.getKey().getSuffix());
+                    writer(objectMap, templatePathMap.get(temp.getKey()), fileOutConfig.outputFile(tableInfo) + ".java");
                 }
             }
         } catch (Exception e) {
@@ -262,6 +272,7 @@ public class ExecuteBuilder {
     }
 
     private Map<FileTypeEnum, String> getTemplatePathMap() {
+
         return null;
     }
 
