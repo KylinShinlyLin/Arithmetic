@@ -12,14 +12,14 @@ public enum FileTypeEnum {
     /**
      * 枚举
      */
-    ENTITY(1, "实体文件", ""),
-    MAPPER(2, "Mapper文件", "Mapper"),
-    XML(3, "XML文件", "Mapper"),
-    SERVICE(4, "Service文件", "Service"),
-    SERVICE_IMPL(5, "ServiceImpl文件", "ServiceImpl"),
-    DTO(6, "DTO文件", "DTO"),
-    VO(7, "VO文件", "VO"),
-    PARAM(8, "Param文件", "QueryParamDTO");
+    ENTITY(1, "实体文件", "", "entity"),
+    MAPPER(2, "Mapper文件", "Mapper", "mapper"),
+    XML(3, "XML文件", "Mapper", "xml"),
+    SERVICE(4, "Service文件", "Service", "service"),
+    SERVICE_IMPL(5, "ServiceImpl文件", "ServiceImpl", "impl"),
+    DTO(6, "DTO文件", "DTO", "dto"),
+    VO(7, "VO文件", "VO", "vo"),
+    PARAM(8, "Param文件", "QueryParamDTO", "param");
 
     @Getter
     private Integer value;
@@ -30,10 +30,14 @@ public enum FileTypeEnum {
     @Getter
     private String suffix;
 
-    FileTypeEnum(Integer value, String describe, String suffix) {
+    @Getter
+    private String path;
+
+    FileTypeEnum(Integer value, String describe, String suffix, String path) {
         this.value = value;
         this.describe = describe;
         this.suffix = suffix;
+        this.path = path;
     }
 
 }

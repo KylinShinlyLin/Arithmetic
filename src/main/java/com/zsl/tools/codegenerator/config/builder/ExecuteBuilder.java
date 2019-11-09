@@ -1,8 +1,10 @@
 package com.zsl.tools.codegenerator.config.builder;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.zsl.tools.codegenerator.config.*;
 import com.zsl.tools.codegenerator.config.rules.NamingStrategy;
+import com.zsl.tools.codegenerator.constants.StringPool;
 import com.zsl.tools.codegenerator.querys.IDbQuery;
 import com.zsl.tools.codegenerator.table.TableField;
 import com.zsl.tools.codegenerator.table.TableInfo;
@@ -19,6 +21,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @program: finance-service
@@ -30,7 +34,7 @@ public class ExecuteBuilder {
     /**
      * 策略配置
      */
-    private StrategyConfig config;
+    private StrategyConfig strategyConfig;
 
     /**
      * 数据库配置
@@ -60,6 +64,13 @@ public class ExecuteBuilder {
      */
     private FreeMarkerConfig freeMarkerConfig;
 
+
+    public ExecuteBuilder() {
+        configuration = new Configuration();
+        configuration.setDefaultEncoding(ConstVal.UTF8);
+        configuration.setClassForTemplateLoading(ExecuteBuilder.class, StringPool.SLASH);
+    }
+
     /**
      * <p>
      * 获取所有的数据库表信息
@@ -75,10 +86,10 @@ public class ExecuteBuilder {
             TableInfo tableInfo;
             while (results.next()) {
                 String tableName = results.getString(dbQuery.tableName());
-                if (StringUtils.isNotEmpty(tableName) && config.getAimTableNames().contains(tableName)) {
+                if (StringUtils.isNotEmpty(tableName) && strategyConfig.getAimTableNames().contains(tableName)) {
                     //提取表注释
                     String tableComment = results.getString(dbQuery.tableComment());
-                    if (config.isSkipView() && "VIEW".equals(tableComment)) {
+                    if (strategyConfig.isSkipView() && "VIEW".equals(tableComment)) {
                         // 跳过视图
                         continue;
                     }
@@ -91,7 +102,7 @@ public class ExecuteBuilder {
                     System.err.println("当前数据库为空！！！");
                 }
             }
-            tableList.forEach(ti -> convertTableFields(ti, config.getColumnNaming()));
+            tableList.forEach(ti -> convertTableFields(ti, strategyConfig.getColumnNaming()));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -107,7 +118,7 @@ public class ExecuteBuilder {
                 e.printStackTrace();
             }
         }
-        return processTable(tableList, config.getColumnNaming());
+        return processTable(tableList, strategyConfig.getColumnNaming());
     }
 
     /**
@@ -158,7 +169,7 @@ public class ExecuteBuilder {
                 //字段数据类型
                 field.setType(results.getString(dbQuery.fieldType()));
                 //映射java字段名称
-                field.setPropertyName(config, processName(field.getName(), strategy, null));
+                field.setPropertyName(strategyConfig, processName(field.getName(), strategy, null));
                 //数据库字段映射Java字段
                 field.setColumnType(dataSourceConfig.getTypeConvert().processTypeConvert(field.getType()));
                 //设置评论
@@ -272,13 +283,26 @@ public class ExecuteBuilder {
     }
 
     private Map<FileTypeEnum, String> getTemplatePathMap() {
-
-        return null;
+        Map<FileTypeEnum, String> typeEnumStringMap = Maps.newHashMap();
+        typeEnumStringMap.put(FileTypeEnum.ENTITY, freeMarkerConfig.getEntityPath());
+        typeEnumStringMap.put(FileTypeEnum.MAPPER, freeMarkerConfig.getMapperPath());
+        typeEnumStringMap.put(FileTypeEnum.XML, freeMarkerConfig.getXmlPath());
+        typeEnumStringMap.put(FileTypeEnum.SERVICE, freeMarkerConfig.getServicePath());
+        typeEnumStringMap.put(FileTypeEnum.SERVICE_IMPL, freeMarkerConfig.getServiceImplPath());
+        typeEnumStringMap.put(FileTypeEnum.DTO, freeMarkerConfig.getDtoPath());
+        typeEnumStringMap.put(FileTypeEnum.VO, freeMarkerConfig.getVoPath());
+        typeEnumStringMap.put(FileTypeEnum.PARAM, freeMarkerConfig.getParamPath());
+        return typeEnumStringMap;
     }
 
 
     private Map<String, Map<FileTypeEnum, String>> getPathInfo() {
-        return null;
+        Map<String, Map<FileTypeEnum, String>> pathInfoMap = Maps.newHashMap();
+        for (String tableName : strategyConfig.getAimTableNames()) {
+            pathInfoMap.put(tableName, Stream.of(FileTypeEnum.values())
+                    .collect(Collectors.toMap(e -> e, FileTypeEnum::getPath)));
+        }
+        return pathInfoMap;
     }
 
     /**
@@ -306,18 +330,22 @@ public class ExecuteBuilder {
     public Map<String, Object> getObjectMap(TableInfo tableInfo) {
         Map<String, Object> objectMap = new HashMap<>(30);
         //相关配置
-        objectMap.put("config", config);
+        objectMap.put("strategyConfig", strategyConfig);
         //包信息
-        objectMap.put("package", config.getPackageInfo());
+        objectMap.put("package", strategyConfig.getPackageInfo());
         //作者
-        objectMap.put("author", config.getAuthor());
+        objectMap.put("author", strategyConfig.getAuthor());
         //主键类型信息
-        objectMap.put("idType", config.getIdType());
+        objectMap.put("idType", strategyConfig.getIdType());
         objectMap.put("date", new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         //表信息
         objectMap.put("table", tableInfo);
         //表实体名称
         objectMap.put("entity", tableInfo.getEntityName());
+        objectMap.put("superEntityClass", "Model");
+        objectMap.put("superMapperClass", "BaseMapper");
+        objectMap.put("superServiceClass", "IService");
+        objectMap.put("superServiceImplClass", "ServiceImpl");
         return objectMap;
     }
 
