@@ -1,5 +1,6 @@
 package com.zsl.tools.codegenerator.config;
 
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  * @author: ZengShiLin
  * @create: 11/8/2019 6:36 PM
  **/
+@Builder
 @Data
 public class FreeMarkerConfig {
 
@@ -26,4 +28,9 @@ public class FreeMarkerConfig {
     private String xmlPath;
 
     private String paramPath;
+
+    /**
+     * 模板位置
+     */
+    private String templates;
 }

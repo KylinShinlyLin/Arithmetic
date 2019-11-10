@@ -1,6 +1,5 @@
 package com.zsl.tools.codegenerator.table;
 
-import com.sun.tools.javac.util.StringUtils;
 import com.zsl.tools.codegenerator.config.StrategyConfig;
 import com.zsl.tools.codegenerator.config.rules.DbColumnType;
 import com.zsl.tools.codegenerator.config.rules.IColumnType;
@@ -26,7 +25,6 @@ public class TableField {
     private String propertyName;
     private IColumnType columnType;
     private String comment;
-    private String fill;
     /**
      * 自定义查询字段列表
      */
@@ -40,13 +38,6 @@ public class TableField {
         this.convert = convert;
     }
 
-    protected void setConvert(StrategyConfig strategyConfig) {
-        if (strategyConfig.isEntityTableFieldAnnotationEnable()) {
-            this.convert = true;
-            return;
-        }
-
-    }
 
     public boolean isKeyFlag() {
         return keyFlag;
@@ -86,7 +77,6 @@ public class TableField {
 
     public void setPropertyName(StrategyConfig strategyConfig, String propertyName) {
         this.propertyName = propertyName;
-        this.setConvert(strategyConfig);
     }
 
     public IColumnType getColumnType() {
@@ -130,14 +120,6 @@ public class TableField {
             return firstChar.toLowerCase() + setGetName.substring(1);
         }
         return firstChar.toUpperCase() + setGetName.substring(1);
-    }
-
-    public String getFill() {
-        return fill;
-    }
-
-    public void setFill(String fill) {
-        this.fill = fill;
     }
 
     public Map<String, Object> getCustomMap() {

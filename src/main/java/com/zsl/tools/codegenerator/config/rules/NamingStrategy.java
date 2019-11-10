@@ -16,11 +16,11 @@ public enum NamingStrategy {
     /**
      * 不做任何改变，原样输出
      */
-    nochange,
+    NOCHANGE,
     /**
      * 下划线转驼峰命名
      */
-    underline_to_camel;
+    UNDERLINE_TO_CAMEL;
 
     public static String underlineToCamel(String name) {
         // 快速检查

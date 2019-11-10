@@ -14,18 +14,11 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public abstract class FileOutConfig {
 
-    /**
-     * 模板
-     */
-    private String templatePath;
 
     public FileOutConfig() {
         // to do nothing
     }
 
-    public FileOutConfig(String templatePath) {
-        this.templatePath = templatePath;
-    }
 
     /**
      * 输出文件

@@ -4,6 +4,8 @@ import com.zsl.tools.codegenerator.config.type.ITypeConvert;
 import com.zsl.tools.codegenerator.config.type.MySqlTypeConvert;
 import com.zsl.tools.codegenerator.querys.IDbQuery;
 import com.zsl.tools.codegenerator.querys.MySqlQuery;
+import lombok.Builder;
+import lombok.Data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,6 +17,8 @@ import java.sql.SQLException;
  * @author: ZengShiLin
  * @create: 11/8/2019 4:35 PM
  **/
+@Data
+@Builder
 public class DataSourceConfig {
 
     /**

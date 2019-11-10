@@ -1,19 +1,21 @@
-package com.zsl.tools.codegenerator.config.builder;
+package com.zsl.tools.codegenerator.builder;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.zsl.tools.codegenerator.config.*;
+import com.zsl.tools.codegenerator.config.rules.DbColumnType;
 import com.zsl.tools.codegenerator.config.rules.NamingStrategy;
-import com.zsl.tools.codegenerator.constants.StringPool;
 import com.zsl.tools.codegenerator.querys.IDbQuery;
 import com.zsl.tools.codegenerator.table.TableField;
 import com.zsl.tools.codegenerator.table.TableInfo;
 import com.zsl.tools.codegenerator.utils.StringUtils;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import lombok.Data;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +32,7 @@ import java.util.stream.Stream;
  * @author: ZengShiLin
  * @create: 11/8/2019 4:31 PM
  **/
+@Data
 public class ExecuteBuilder {
     /**
      * 策略配置
@@ -65,10 +68,28 @@ public class ExecuteBuilder {
     private FreeMarkerConfig freeMarkerConfig;
 
 
-    public ExecuteBuilder() {
+    /**
+     * 构造执行器
+     *
+     * @param strategyConfig   策略配置
+     * @param dataSourceConfig 数据源配置
+     * @param freeMarkerConfig 模板配置
+     * @param fileOutConfig    文件输出配置
+     */
+    public ExecuteBuilder(
+            StrategyConfig strategyConfig,
+            DataSourceConfig dataSourceConfig,
+            FreeMarkerConfig freeMarkerConfig,
+            FileOutConfig fileOutConfig) throws IOException {
+        this.strategyConfig = strategyConfig;
+        this.dataSourceConfig = dataSourceConfig;
+        this.freeMarkerConfig = freeMarkerConfig;
+        this.fileOutConfig = fileOutConfig;
+        connection = dataSourceConfig.getConn();
+        dbQuery = dataSourceConfig.getDbQuery();
         configuration = new Configuration();
         configuration.setDefaultEncoding(ConstVal.UTF8);
-        configuration.setClassForTemplateLoading(ExecuteBuilder.class, StringPool.SLASH);
+        configuration.setDirectoryForTemplateLoading(new File(freeMarkerConfig.getTemplates()));
     }
 
     /**
@@ -80,7 +101,7 @@ public class ExecuteBuilder {
         PreparedStatement preparedStatement = null;
         List<TableInfo> tableList = Lists.newArrayList();
         try {
-            String tablesSql = dbQuery.tablesSql();
+            String tablesSql = this.getTableInfoSql(this.getStrategyConfig().getAimTableNames(), this.getDbQuery());
             preparedStatement = connection.prepareStatement(tablesSql);
             ResultSet results = preparedStatement.executeQuery();
             TableInfo tableInfo;
@@ -89,7 +110,7 @@ public class ExecuteBuilder {
                 if (StringUtils.isNotEmpty(tableName) && strategyConfig.getAimTableNames().contains(tableName)) {
                     //提取表注释
                     String tableComment = results.getString(dbQuery.tableComment());
-                    if (strategyConfig.isSkipView() && "VIEW".equals(tableComment)) {
+                    if ("VIEW".equals(tableComment)) {
                         // 跳过视图
                         continue;
                     }
@@ -120,6 +141,37 @@ public class ExecuteBuilder {
         }
         return processTable(tableList, strategyConfig.getColumnNaming());
     }
+
+
+    private String getTableInfoSql(List<String> tables, IDbQuery dbQuery) {
+        String tablesSql = dbQuery.tablesSql();
+        //带上 where in 条件
+        StringBuilder sb = new StringBuilder(tablesSql);
+        sb.append(" ").append(" WHERE Name ")
+                .append(this.strJoinWhereIn(this.getStrategyConfig().getAimTableNames())).append(";");
+        return sb.toString();
+    }
+
+
+    /**
+     * 组装where查询条件
+     *
+     * @param list 集合
+     * @return 返回 IN 条件
+     */
+    private String strJoinWhereIn(List<String> list) {
+        StringBuilder sb = new StringBuilder("IN (");
+        for (Object temp : list) {
+            if (list.size() - 1 == list.indexOf(temp)) {
+                sb.append("\'").append(temp).append("\'");
+            } else {
+                sb.append("\'").append(temp).append("\',");
+            }
+        }
+        sb.append(")");
+        return sb.toString();
+    }
+
 
     /**
      * <p>
@@ -171,7 +223,13 @@ public class ExecuteBuilder {
                 //映射java字段名称
                 field.setPropertyName(strategyConfig, processName(field.getName(), strategy, null));
                 //数据库字段映射Java字段
-                field.setColumnType(dataSourceConfig.getTypeConvert().processTypeConvert(field.getType()));
+                // 处理ID
+                if (isId) {
+                    //主键统一使用 Long
+                    field.setColumnType(DbColumnType.LONG);
+                } else {
+                    field.setColumnType(dataSourceConfig.getTypeConvert().processTypeConvert(field.getType()));
+                }
                 //设置评论
                 field.setComment(results.getString(dbQuery.fieldComment()));
                 fieldList.add(field);
@@ -243,14 +301,14 @@ public class ExecuteBuilder {
         }
         String propertyName;
         if (removePrefix) {
-            if (strategy == NamingStrategy.underline_to_camel) {
+            if (strategy == NamingStrategy.UNDERLINE_TO_CAMEL) {
                 // 删除前缀、下划线转驼峰
                 propertyName = NamingStrategy.removePrefixAndCamel(name, prefix);
             } else {
                 // 删除前缀
                 propertyName = NamingStrategy.removePrefix(name, prefix);
             }
-        } else if (strategy == NamingStrategy.underline_to_camel) {
+        } else if (strategy == NamingStrategy.UNDERLINE_TO_CAMEL) {
             // 下划线转驼峰
             propertyName = NamingStrategy.underlineToCamel(name);
         } else {
@@ -271,9 +329,13 @@ public class ExecuteBuilder {
                 Map<String, Object> objectMap = this.getObjectMap(tableInfo);
                 Map<FileTypeEnum, String> templatePathMap = this.getTemplatePathMap();
                 for (Map.Entry<FileTypeEnum, String> temp : pathInfo.entrySet()) {
-                    checkNotExistCreate(temp.getValue());
+                    checkNotExistCreate(fileOutConfig.outputFile(tableInfo) + "/" + temp.getKey().getPath());
                     //TODO freemarker 模板
-                    writer(objectMap, templatePathMap.get(temp.getKey()), fileOutConfig.outputFile(tableInfo) + ".java");
+                    writer(objectMap, templatePathMap.get(temp.getKey()),
+                            fileOutConfig.outputFile(tableInfo)
+                                    + "/" + temp.getKey().getPath()
+                                    + "/" + tableInfo.getEntityName() + temp.getKey().getSuffix()
+                                    + temp.getKey().getFileExtName());
                 }
             }
         } catch (Exception e) {
@@ -364,5 +426,52 @@ public class ExecuteBuilder {
         fileOutputStream.close();
     }
 
+    /**
+     * 执行
+     */
+    public void execute() {
+        this.outPutFile();
+    }
 
+
+
+    public static void main(String[] args) throws IOException {
+        StrategyConfig strategyConfig = StrategyConfig.builder()
+                .aimTableNames(Lists.newArrayList("fin_credit_bill_new", "fin_credit_bill_detail"))
+                .columnNaming(NamingStrategy.UNDERLINE_TO_CAMEL)
+                .author("ZengShiLin")
+                .build();
+
+        DataSourceConfig dataSourceConfig = DataSourceConfig.builder()
+                .url("jdbc:mysql://192.168.0.210:3312/finance?characterEncoding=utf-8")
+                .driverName("com.mysql.jdbc.Driver")
+                .username("ops")
+                .password("123")
+                .dbType(DbType.MYSQL)
+                .build();
+
+        String projectPath = System.getProperty("user.dir");
+
+        FreeMarkerConfig freeMarkerConfig = FreeMarkerConfig.builder()
+                .entityPath("entity.java.ftl")
+                .servicePath("service.java.ftl")
+                .serviceImplPath("serviceImpl.java.ftl")
+                .dtoPath("dto.java.ftl")
+                .voPath("vo.java.ftl")
+                .mapperPath("mapper.java.ftl")
+                .xmlPath("xml.ftl")
+                .paramPath("param.java.ftl")
+                .templates(projectPath + "/src/main/resources/templates/")
+                .build();
+        FileOutConfig fileOutConfig = new FileOutConfig() {
+            @Override
+            public String outputFile(TableInfo tableInfo) {
+                // 自定义输入文件名称
+                return projectPath + "/src/main/code/generator";
+            }
+        };
+
+        ExecuteBuilder builder = new ExecuteBuilder(strategyConfig, dataSourceConfig, freeMarkerConfig, fileOutConfig);
+        builder.outPutFile();
+    }
 }

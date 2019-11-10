@@ -44,25 +44,6 @@ public class TableInfo {
         return convert;
     }
 
-    protected void setConvert(StrategyConfig strategyConfig) {
-        if (strategyConfig.containsTablePrefix(name)) {
-            // 包含前缀
-            this.convert = true;
-//        } else if (strategyConfig.isCapitalModeNaming(name)) {
-//            // 包含
-//            this.convert = false;
-//        } else {
-            // 转换字段
-//            if (NamingStrategy.underline_to_camel == strategyConfig.getColumnNaming()) {
-//                // 包含大写处理
-//                if (StringUtils.containsUpperCase(name)) {
-//                    this.convert = true;
-//                }
-//            } else if (!entityName.equalsIgnoreCase(name)) {
-//                this.convert = true;
-//            }
-        }
-    }
 
     public void setConvert(boolean convert) {
         this.convert = convert;
@@ -101,7 +82,6 @@ public class TableInfo {
 
     public void setEntityName(StrategyConfig strategyConfig, String entityName) {
         this.entityName = entityName;
-        this.setConvert(strategyConfig);
     }
 
     public String getMapperName() {
@@ -155,24 +135,6 @@ public class TableInfo {
             for (TableField field : fields) {
                 if (null != field.getColumnType() && null != field.getColumnType().getPkg()) {
                     importPackages.add(field.getColumnType().getPkg());
-                }
-                if (field.isKeyFlag()) {
-                    // 主键
-                    if (field.isConvert() || field.isKeyIdentityFlag()) {
-                        //importPackages.add(com.baomidou.mybatisplus.annotation.TableId.class.getCanonicalName());
-                    }
-                    // 自增
-                    if (field.isKeyIdentityFlag()) {
-                        //importPackages.add(com.baomidou.mybatisplus.annotation.IdType.class.getCanonicalName());
-                    }
-                } else if (field.isConvert()) {
-                    // 普通字段
-                    //importPackages.add(com.baomidou.mybatisplus.annotation.TableField.class.getCanonicalName());
-                }
-                if (null != field.getFill()) {
-                    // 填充字段
-                    //importPackages.add(com.baomidou.mybatisplus.annotation.TableField.class.getCanonicalName());
-                    //importPackages.add(com.baomidou.mybatisplus.annotation.FieldFill.class.getCanonicalName());
                 }
             }
         }
