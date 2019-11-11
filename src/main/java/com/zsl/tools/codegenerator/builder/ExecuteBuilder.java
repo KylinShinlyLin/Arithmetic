@@ -467,7 +467,7 @@ public class ExecuteBuilder {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/src/main/code/generator";
+                return projectPath + "/src/code/generator";
             }
         };
 
