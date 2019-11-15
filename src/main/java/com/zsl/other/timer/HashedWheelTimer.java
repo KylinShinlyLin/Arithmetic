@@ -427,10 +427,14 @@ public class HashedWheelTimer implements Timer {
             startTimeInitialized.countDown();
 
             do {
+                //当前延时时间，纳秒时间戳
                 final long deadline = waitForNextTick();
                 if (deadline > 0) {
+                    //这里把 HashedWheelBucket 变成了一个类似于环形的数组
                     int idx = (int) (tick & mask);
+                    //执行cancel任务
                     processCancelledTasks();
+                    //找到相应tick的桶
                     HashedWheelBucket bucket =
                             wheel[idx];
                     transferTimeoutsToBuckets();
@@ -497,6 +501,7 @@ public class HashedWheelTimer implements Timer {
         }
 
         /**
+         * 循环到下一跳 tick
          * calculate goal nanoTime from startTime and current tick number,
          * then wait until that goal has been reached.
          *
@@ -504,8 +509,8 @@ public class HashedWheelTimer implements Timer {
          * current time otherwise (with Long.MIN_VALUE changed by +1)
          */
         private long waitForNextTick() {
-            long deadline = tickDuration * (tick + 1);
-
+            long deadline = tickDuration * (tick + 1); //需要等待的时间（这里是纳秒）定义一个tick是多久
+            //循环到下一 tick
             for (; ; ) {
                 final long currentTime = System.nanoTime() - startTime;
                 long sleepTimeMs = (deadline - currentTime + 999999) / 1000000;
@@ -697,17 +702,18 @@ public class HashedWheelTimer implements Timer {
         }
 
         /**
+         * 不停的循环执行，直到把这里面的timeout都执行完毕
          * Expire all {@link HashedWheelTimeout}s for the given {@code deadline}.
          */
         void expireTimeouts(long deadline) {
             HashedWheelTimeout timeout = head;
-
             // process all timeouts
             while (timeout != null) {
                 HashedWheelTimeout next = timeout.next;
                 if (timeout.remainingRounds <= 0) {
                     next = remove(timeout);
                     if (timeout.deadline <= deadline) {
+                        //这块可以改造一下，将task丢到线程池里面执行，加快 HashedWheelTimer的执行速度，当然如果只是计算没有IO，引用线程池还会更加慢
                         timeout.expire();
                     } else {
                         // The timeout was placed into a wrong slot. This should never happen.
