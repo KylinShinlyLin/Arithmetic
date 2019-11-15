@@ -277,6 +277,12 @@ public class HashedWheelTimer implements Timer {
         return wheel;
     }
 
+    /**
+     * 这个和HashMap的自动扩容是差不多的，扩容2的幂 * 2
+     *
+     * @param ticksPerWheel
+     * @return
+     */
     private static int normalizeTicksPerWheel(int ticksPerWheel) {
         int normalizedTicksPerWheel = ticksPerWheel - 1;
         normalizedTicksPerWheel |= normalizedTicksPerWheel >>> 1;
@@ -479,7 +485,7 @@ public class HashedWheelTimer implements Timer {
                 // Ensure we don't schedule for past.
                 final long ticks = Math.max(calculated, tick);
                 int stopIndex = (int) (ticks & mask);
-
+                //将刚刚添加的TimeOut任务添加到Hash桶的链表上面
                 HashedWheelBucket bucket = wheel[stopIndex];
                 bucket.addTimeout(timeout);
             }
@@ -674,6 +680,7 @@ public class HashedWheelTimer implements Timer {
     }
 
     /**
+     * 一个Hash 通的具体实例
      * Bucket that stores HashedWheelTimeouts. These are stored in a linked-list like datastructure to allow easy
      * removal of HashedWheelTimeouts in the middle. Also the HashedWheelTimeout act as nodes themself and so no
      * extra object creation is needed.

@@ -161,7 +161,7 @@
       <workItem from="1573450545165" duration="621000" />
       <workItem from="1573736093797" duration="610000" />
       <workItem from="1573799362351" duration="852000" />
-      <workItem from="1573806558669" duration="1348000" />
+      <workItem from="1573806558669" duration="2387000" />
     </task>
     <task id="LOCAL-00001" summary="二叉树的删除操作">
       <created>1566024385047</created>
@@ -233,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573271088764</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="时间轮">
+      <created>1573807925059</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573807925060</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +281,8 @@
     <MESSAGE value="代码生成器" />
     <MESSAGE value="提交" />
     <MESSAGE value="提交代码生成器" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交代码生成器" />
+    <MESSAGE value="时间轮" />
+    <option name="LAST_COMMIT_MESSAGE" value="时间轮" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
