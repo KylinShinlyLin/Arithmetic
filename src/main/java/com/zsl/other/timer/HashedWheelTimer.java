@@ -16,6 +16,8 @@
 
 package com.zsl.other.timer;
 
+import org.apache.commons.lang3.concurrent.BasicThreadFactory;
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -103,6 +105,16 @@ public class HashedWheelTimer implements Timer {
     private final long maxPendingTimeouts;
 
     private volatile long startTime;
+
+    /**
+     * 大型任务，丢到线程池里面执行，避免阻塞计时器的运行(多个HashedWheelTimer共用一个线程池)
+     */
+    private static ThreadPoolExecutor heavyTaskPool;
+
+    /**
+     * 线程池初始化标记
+     */
+    private static volatile boolean poolInitializeFlag;
 
     /**
      * Creates a new timer with the default thread factory
@@ -244,6 +256,21 @@ public class HashedWheelTimer implements Timer {
                 WARNED_TOO_MANY_INSTANCES.compareAndSet(false, true)) {
             // reportTooManyInstances(); 太多实例
         }
+        int coreNum = Runtime.getRuntime().availableProcessors();
+        //双重锁
+        synchronized (HashedWheelTimer.class) {
+            if (!poolInitializeFlag) {
+                heavyTaskPool = new ThreadPoolExecutor(
+                        coreNum * 2,
+                        coreNum * 2,
+                        3000L,
+                        TimeUnit.MILLISECONDS,
+                        new LinkedBlockingQueue<>(), //先给一个无界队列
+                        new BasicThreadFactory.Builder().namingPattern("HashedWheelTimer_Heavy_Task_Pool").build()
+                );
+                poolInitializeFlag = true;
+            }
+        }
     }
 
     @Override
@@ -368,8 +395,9 @@ public class HashedWheelTimer implements Timer {
         return WORKER_STATE_SHUTDOWN == WORKER_STATE_UPDATER.get(this);
     }
 
+
     @Override
-    public Timeout newTimeout(TimerTask task, long delay, TimeUnit unit) {
+    public Timeout newTimeout(TimerTask task, long delay, TimeUnit unit, boolean isHeavyJob) {
         if (task == null) {
             throw new NullPointerException("task");
         }
@@ -396,7 +424,7 @@ public class HashedWheelTimer implements Timer {
         if (delay > 0 && deadline < 0) {
             deadline = Long.MAX_VALUE;
         }
-        HashedWheelTimeout timeout = new HashedWheelTimeout(this, task, deadline);
+        HashedWheelTimeout timeout = new HashedWheelTimeout(this, task, deadline, isHeavyJob);
         timeouts.add(timeout);
         return timeout;
     }
@@ -408,6 +436,9 @@ public class HashedWheelTimer implements Timer {
         return pendingTimeouts.get();
     }
 
+//    /**
+//     * 判断JVM中是否有很多HashWheelTimer实例，并且告警
+//     */
 //    private static void reportTooManyInstances() {
 //        String resourceType = ClassUtils.simpleClassName(HashedWheelTimer.class);
 //        logger.error("You are creating too many " + resourceType + " instances. " +
@@ -416,7 +447,8 @@ public class HashedWheelTimer implements Timer {
 //    }
 
     private final class Worker implements Runnable {
-        private final Set<Timeout> unprocessedTimeouts = new HashSet<Timeout>();
+        //还没有执行的TimeOut
+        private final Set<Timeout> unprocessedTimeouts = new HashSet<>();
 
         private long tick;
 
@@ -444,6 +476,7 @@ public class HashedWheelTimer implements Timer {
                     HashedWheelBucket bucket =
                             wheel[idx];
                     transferTimeoutsToBuckets();
+                    //执行当前tick的buckets里面的TimeOut
                     bucket.expireTimeouts(deadline);
                     tick++;
                 }
@@ -465,6 +498,9 @@ public class HashedWheelTimer implements Timer {
             processCancelledTasks();
         }
 
+        /**
+         * 先把新加入的TimeOut放到Buckets里面
+         */
         private void transferTimeoutsToBuckets() {
             // transfer only max. 100000 timeouts per tick to prevent a thread to stale the workerThread when it just
             // adds new timeouts in a loop.
@@ -558,9 +594,11 @@ public class HashedWheelTimer implements Timer {
         private final HashedWheelTimer timer;
         private final TimerTask task;
         private final long deadline;
+        private final boolean isHeavyJob;
 
         @SuppressWarnings({"unused", "FieldMayBeFinal", "RedundantFieldInitialization"})
         private volatile int state = ST_INIT;
+
 
         /**
          * RemainingRounds will be calculated and set by Worker.transferTimeoutsToBuckets() before the
@@ -580,10 +618,11 @@ public class HashedWheelTimer implements Timer {
          */
         HashedWheelBucket bucket;
 
-        HashedWheelTimeout(HashedWheelTimer timer, TimerTask task, long deadline) {
+        HashedWheelTimeout(HashedWheelTimer timer, TimerTask task, long deadline, boolean isHeavyJob) {
             this.timer = timer;
             this.task = task;
             this.deadline = deadline;
+            this.isHeavyJob = isHeavyJob;
         }
 
         @Override
@@ -721,7 +760,11 @@ public class HashedWheelTimer implements Timer {
                     next = remove(timeout);
                     if (timeout.deadline <= deadline) {
                         //这块可以改造一下，将task丢到线程池里面执行，加快 HashedWheelTimer的执行速度，当然如果只是计算没有IO，引用线程池还会更加慢
-                        timeout.expire();
+                        if (timeout.isHeavyJob) {
+                            heavyTaskPool.execute(timeout::expire);
+                        } else {
+                            timeout.expire();
+                        }
                     } else {
                         // The timeout was placed into a wrong slot. This should never happen.
                         throw new IllegalStateException(String.format(
@@ -808,9 +851,32 @@ public class HashedWheelTimer implements Timer {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        HashedWheelTimer.test2();
+    }
+
+
+    private static void test() {
         HashedWheelTimer timer = new HashedWheelTimer();
-        timer.newTimeout(timeout -> System.out.println("时间轮"), 1000, TimeUnit.MILLISECONDS);
+        long startTime = System.currentTimeMillis();
+        timer.newTimeout(timeout -> {
+            Thread.sleep(3000);
+            System.out.println("时间轮1,耗时：" + (System.currentTimeMillis() - startTime));
+        }, 1000, TimeUnit.MILLISECONDS, true);
+        long startTime2 = System.currentTimeMillis();
+        timer.newTimeout(timeout -> System.out.println("时间轮2,耗时：" + (System.currentTimeMillis() - startTime2)),
+                1200, TimeUnit.MILLISECONDS, true);
+        timer.stop();
+    }
+
+
+    private static void test2() throws InterruptedException {
+        HashedWheelTimer timer = new HashedWheelTimer(1, TimeUnit.MILLISECONDS);
+        CountDownLatch count = new CountDownLatch(1);
+        long startTime = System.currentTimeMillis();
+        timer.newTimeout(timeout -> count.countDown(),0, TimeUnit.MILLISECONDS, false);
+        count.await(5000, TimeUnit.MILLISECONDS);
+        System.out.println("时间轮1,耗时：" + (System.currentTimeMillis() - startTime));
     }
 
 }

@@ -434,7 +434,6 @@ public class ExecuteBuilder {
     }
 
 
-
     public static void main(String[] args) throws IOException {
         StrategyConfig strategyConfig = StrategyConfig.builder()
                 .aimTableNames(Lists.newArrayList("fin_credit_bill_new", "fin_credit_bill_detail"))
