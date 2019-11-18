@@ -871,12 +871,19 @@ public class HashedWheelTimer implements Timer {
 
 
     private static void test2() throws InterruptedException {
-        HashedWheelTimer timer = new HashedWheelTimer(1, TimeUnit.MILLISECONDS);
+        HashedWheelTimer timer = new HashedWheelTimer();
         CountDownLatch count = new CountDownLatch(1);
         long startTime = System.currentTimeMillis();
         timer.newTimeout(timeout -> count.countDown(),0, TimeUnit.MILLISECONDS, false);
         count.await(5000, TimeUnit.MILLISECONDS);
         System.out.println("时间轮1,耗时：" + (System.currentTimeMillis() - startTime));
+
+
+        CountDownLatch count2 = new CountDownLatch(1);
+        long startTime2 = System.currentTimeMillis();
+        timer.newTimeout(timeout -> count2.countDown(),0, TimeUnit.MILLISECONDS, false);
+        count2.await(5000, TimeUnit.MILLISECONDS);
+        System.out.println("时间轮1,耗时：" + (System.currentTimeMillis() - startTime2));
     }
 
 }
