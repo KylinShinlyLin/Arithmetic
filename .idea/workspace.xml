@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1393072-dbd2-44dc-8a50-67d1f2ea8c53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/other/timer/HashedWheelTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/other/timer/HashedWheelTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +193,7 @@
       <workItem from="1574066918381" duration="1361000" />
       <workItem from="1574068486131" duration="8113000" />
       <workItem from="1574152028419" duration="1241000" />
-      <workItem from="1574331892580" duration="5485000" />
+      <workItem from="1574331892580" duration="6916000" />
     </task>
     <task id="LOCAL-00001" summary="二叉树的删除操作">
       <created>1566024385047</created>
@@ -294,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574073558054</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="求回文字符">
+      <created>1574337538194</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1574337538194</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +345,8 @@
     <MESSAGE value="提交算法" />
     <MESSAGE value="提交时间轮" />
     <MESSAGE value="时间轮算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="时间轮算法" />
+    <MESSAGE value="求回文字符" />
+    <option name="LAST_COMMIT_MESSAGE" value="求回文字符" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -381,13 +388,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="76" />
+          <line>39</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
