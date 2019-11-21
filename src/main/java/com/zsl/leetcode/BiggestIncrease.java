@@ -10,45 +10,32 @@ package com.zsl.leetcode;
 public class BiggestIncrease {
 
 
-    int total;
-    int[] nums;
-    boolean partition = false;
+    int counts[];
 
     /**
-     * @param inputs 数字
+     * @param nums 数字
      * @return 最大长度
      */
-    private int biggestIncrease(int[] inputs) {
-        nums = inputs;
-        return sonMax(nums.length - 1);
+    private int biggestIncrease(int[] nums) {
+        counts = new int[nums.length];
+        counts[0] = 1;
+        for (int i = 1; i < nums.length; i++) {
+            counts[i] = 1;
+            for (int j = i - 1; j >= 0; j--) {
+                if (nums[i] > nums[j]) {
+                    counts[i] = Math.max(counts[i], counts[j] + 1);
+                }
+            }
+        }
+        int res = 0;
+        for (int temp : counts) {
+            if (temp > res) {
+                res = temp;
+            }
+        }
+        return res;
     }
 
-
-    private int sonMax(int index) {
-        if (index == 0 && !partition) {
-            return 1;
-        } else if (index == 0 && partition) {
-            return 0;
-        }
-        if (nums[index - 1] < nums[index]) {
-            return total + 1 + sonMax(index - 1);
-        } else if (nums[index - 2] < nums[index - 1] && nums[index - 1] > nums[index]) {
-            nums = getSonArray(index - 1, nums);
-            partition = true;
-            return sonMax(nums.length - 1) ;
-        } else {
-            return total + sonMax(index - 1);
-        }
-    }
-
-
-    private int[] getSonArray(int index, int[] nums) {
-        int[] son = new int[index + 1];
-        for (int temp = index, i = index; i >= 0; i--, temp--) {
-            son[temp] = nums[i];
-        }
-        return son;
-    }
 
     public static void main(String[] args) {
         int[] nums = {11, 12, 13, 14, 15, 16, 17, 1, 2, 3, 4, 5, 6, 7, 8, 9};
