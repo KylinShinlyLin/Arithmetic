@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1393072-dbd2-44dc-8a50-67d1f2ea8c53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/other/timer/HashedWheelTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/other/timer/HashedWheelTimer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dubbo/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -94,7 +96,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HashedWheelTimer">
+  <component name="RunManager" selected="Application.BiggestIncrease">
+    <configuration name="BiggestIncrease" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.BiggestIncrease" />
+      <module name="arithmetic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zsl.leetcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExecuteBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zsl.tools.codegenerator.builder.ExecuteBuilder" />
       <module name="arithmetic" />
@@ -124,9 +139,11 @@
     <list>
       <item itemvalue="Application.ExecuteBuilder" />
       <item itemvalue="Application.HashedWheelTimer" />
+      <item itemvalue="Application.BiggestIncrease" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BiggestIncrease" />
         <item itemvalue="Application.HashedWheelTimer" />
         <item itemvalue="Application.ExecuteBuilder" />
       </list>
@@ -175,7 +192,9 @@
       <workItem from="1573806558669" duration="3514000" />
       <workItem from="1574059975254" duration="2988000" />
       <workItem from="1574066918381" duration="1361000" />
-      <workItem from="1574068486131" duration="4986000" />
+      <workItem from="1574068486131" duration="8113000" />
+      <workItem from="1574152028419" duration="1241000" />
+      <workItem from="1574331892580" duration="5485000" />
     </task>
     <task id="LOCAL-00001" summary="二叉树的删除操作">
       <created>1566024385047</created>
@@ -268,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574073360684</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="时间轮算法">
+      <created>1574073558054</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574073558054</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +338,8 @@
     <MESSAGE value="时间轮" />
     <MESSAGE value="提交算法" />
     <MESSAGE value="提交时间轮" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交时间轮" />
+    <MESSAGE value="时间轮算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="时间轮算法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -351,6 +378,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/zsl/tools/codegenerator/builder/ExecuteBuilder.java</url>
           <line>326</line>
           <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
