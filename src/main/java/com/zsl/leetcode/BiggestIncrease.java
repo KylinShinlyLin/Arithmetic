@@ -38,7 +38,7 @@ public class BiggestIncrease {
 
 
     public static void main(String[] args) {
-        int[] nums = {11, 12, 13, 14, 15, 16, 17, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] nums = {2,3,7,1,4,5};
         BiggestIncrease increase = new BiggestIncrease();
         System.out.println(increase.biggestIncrease(nums));
 
