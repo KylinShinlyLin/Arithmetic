@@ -1,7 +1,5 @@
 package com.zsl.leetcode;
 
-import lombok.Getter;
-
 /**
  * @program: finance-service
  * @description: 我们有一个数字序列包含n个不同的数组，如何求出这个序列汇总最长递增子序列长度，如 2,9,3,6,5,1,7 这样一组数字序列，
@@ -11,61 +9,39 @@ import lombok.Getter;
  **/
 public class BiggestIncrease {
 
-    @Getter
-    int total;
-    int[] nums;
-    int totalTemp;
-    boolean flag = true;
+
+    int counts[];
 
     /**
-     * @param inputs 数字
+     * @param nums 数字
      * @return 最大长度
      */
-    private void biggestIncrease(int[] inputs) {
-        nums = inputs;
-        sonMax(nums.length - 1);
-    }
-
-
-    private void sonMax(int index) {
-        if (index == 0) {
-            total = total + 1;
-            return;
-        }
-        if (nums[index - 1] < nums[index]) {
-            total = total + 1;
-            sonMax(index - 1);
-        } else if (nums[index - 1] >= nums[index] && !flag) {
-            flag = false;
-            sonMax(index - 1);
-        } else if (nums[index - 2] < nums[index - 1] && nums[index - 1] > nums[index] && flag) {
-            total = total + 1;
-            nums = getSonArray(index - 1, nums);
-            totalTemp = total;
-            //重置
-            total = 0;
-            flag = true;
-            sonMax(nums.length - 1);
-            if (totalTemp > total) {
-                total = totalTemp;
+    private int biggestIncrease(int[] nums) {
+        counts = new int[nums.length];
+        counts[0] = 1;
+        for (int i = 1; i < nums.length; i++) {
+            counts[i] = 1;
+            for (int j = i - 1; j >= 0; j--) {
+                if (nums[i] > nums[j]) {
+                    counts[i] = Math.max(counts[i], counts[j] + 1);
+                }
             }
         }
-    }
-
-
-    private int[] getSonArray(int index, int[] nums) {
-        int[] son = new int[index + 1];
-        for (int temp = index, i = index; i >= 0; i--, temp--) {
-            son[temp] = nums[i];
+        int res = 0;
+        for (int temp : counts) {
+            if (temp > res) {
+                res = temp;
+            }
         }
-        return son;
+        return res;
     }
+
 
     public static void main(String[] args) {
-        int[] nums = {4, 3, 7, 5, 4, 5, 1, 5, 2, 85, 7, 1, 45, 1};
+        int[] nums = {2,3,7,1,4,5};
         BiggestIncrease increase = new BiggestIncrease();
-        increase.biggestIncrease(nums);
-        System.out.println(increase.getTotal());
+        System.out.println(increase.biggestIncrease(nums));
+
     }
 
 
