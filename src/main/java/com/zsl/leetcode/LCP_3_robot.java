@@ -22,7 +22,6 @@ public class LCP_3_robot {
         int goX = 0, goY = 0;
         //设置陷阱的位置
         Map<String, Integer> map = Arrays.stream(obstacles).collect(Collectors.toMap(e -> e[0] + "_" + e[1], e -> 0));
-        System.out.println(JSON.toJSONString(map));
         for (; ; ) {
             for (char operation : single) {
                 if (operation == 'U') {
