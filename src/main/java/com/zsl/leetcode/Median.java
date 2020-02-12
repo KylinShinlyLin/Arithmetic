@@ -2,8 +2,6 @@ package com.zsl.leetcode;/**
  * Create by ZengShiLin on 2020-02-11
  */
 
-import java.util.PriorityQueue;
-
 /**
  * @program: finance-service
  * @description: 求中位数(经典题目)
