@@ -10,14 +10,11 @@ import java.util.HashMap;
  * @author: ZengShiLin
  * @create: 2020-02-12 下午21:08
  **/
-public class _LFUCache {
+public class _LRUCache {
 
     int capacity;
 
     int total;
-
-    //当前最少次数
-    int min;
 
     //键值对
     private HashMap<Integer, Integer> cacheMap;
@@ -49,7 +46,7 @@ public class _LFUCache {
     }
 
     public static void main(String[] args) {
-        _LFUCache cache = new _LFUCache(3);
+        _LRUCache cache = new _LRUCache(3);
         cache.put(2, 2);
         System.out.println("[]");
         cache.put(1, 1);
@@ -68,7 +65,7 @@ public class _LFUCache {
     }
 
 
-    public _LFUCache(Integer capacity) {
+    public _LRUCache(Integer capacity) {
         this.capacity = capacity;
         cacheMap = new HashMap<>(capacity);
         nodeMap = new HashMap<>(capacity);
