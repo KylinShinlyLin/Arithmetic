@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61252bc2-c67e-42e3-a24b-9a69a9f2eaf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_206ListReversal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_92ListReversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/InsertSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_53MaxSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_5MaxPalindromeString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_70ClimbStairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_767RefactorString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_903DISequence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/test/Knapsack01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01Upgrade.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,64 +27,68 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Letter_phone_number_17.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_53MaxSum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="324">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/OverturnWord.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_5MaxPalindromeString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+            <state relative-caret-position="216">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/InsertSort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+              <folding>
+                <element signature="e#308#309#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Partition_Equal_Subset_Sum_416.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01Upgrade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="-450">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/LCP_3_robot.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_70ClimbStairs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_767RefactorString.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_2AddTowNum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="5" selection-start-line="12" selection-start-column="3" selection-end-line="19" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LFUCache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -85,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_206ListReversal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="228">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#307#308#0" expanded="true" />
                 <element signature="e#338#339#0" expanded="true" />
@@ -95,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_92ListReversal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+            <state relative-caret-position="480">
+              <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
               <folding>
                 <element signature="e#314#315#0" expanded="true" />
                 <element signature="e#345#346#0" expanded="true" />
@@ -136,6 +147,8 @@
       <find>int</find>
       <find>total</find>
       <find>Integer</find>
+      <find>key</find>
+      <find>无重复</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -158,10 +171,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_1SumTowNum.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/bo/ListNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_2AddTowNum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LFUCache.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_206ListReversal.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_92ListReversal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_903DISequence.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_767RefactorString.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_5MaxPalindromeString.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_53MaxSum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/test/Knapsack01.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01Upgrade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_70ClimbStairs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/InsertSort.java" />
       </list>
     </option>
   </component>
@@ -175,8 +197,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-79" />
-    <option name="y" value="85" />
+    <option name="x" value="-74" />
+    <option name="y" value="128" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
@@ -185,7 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,12 +261,23 @@
             </path>
             <path>
               <item name="arithmetic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Arithmetic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="zsl" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="arithmetic" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -284,9 +316,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application._LRUCache">
-    <configuration name="Letter_phone_number_17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Letter_phone_number_17" />
+  <component name="RunManager" selected="Application.InsertSort">
+    <configuration name="InsertSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.InsertSort" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
@@ -298,8 +330,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Median" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Median" />
+    <configuration name="Knapsack01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Knapsack01" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
@@ -311,8 +343,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OverturnWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.OverturnWord" />
+    <configuration name="_70ClimbStairs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode._70ClimbStairs" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
@@ -324,8 +356,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="_2AddTowNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode._2AddTowNum" />
+    <configuration name="_767RefactorString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode._767RefactorString" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
@@ -352,11 +384,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InsertSort" />
+        <item itemvalue="Application._70ClimbStairs" />
+        <item itemvalue="Application.Knapsack01" />
         <item itemvalue="Application._LRUCache" />
-        <item itemvalue="Application._2AddTowNum" />
-        <item itemvalue="Application.Letter_phone_number_17" />
-        <item itemvalue="Application.Median" />
-        <item itemvalue="Application.OverturnWord" />
+        <item itemvalue="Application._767RefactorString" />
       </list>
     </recent_temporary>
   </component>
@@ -375,7 +407,11 @@
       <workItem from="1581477377763" duration="8233000" />
       <workItem from="1581567405746" duration="648000" />
       <workItem from="1581595398450" duration="6882000" />
-      <workItem from="1581648283797" duration="7042000" />
+      <workItem from="1581648283797" duration="8405000" />
+      <workItem from="1581669940385" duration="2392000" />
+      <workItem from="1581764805232" duration="5816000" />
+      <workItem from="1581777422032" duration="1864000" />
+      <workItem from="1581824176292" duration="10274000" />
     </task>
     <task id="LOCAL-00001" summary="LeetCode代码">
       <created>1581426079057</created>
@@ -398,17 +434,24 @@
       <option name="project" value="LOCAL" />
       <updated>1581603400180</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="链表反转和链表反转2">
+      <created>1581656535197</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581656535197</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42084000" />
+    <option name="totallyTimeSpent" value="63793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2969169" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31367293" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -429,7 +472,7 @@
       <window_info anchor="bottom" id="Statistic" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32894737" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32658958" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -450,7 +493,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="LeetCode代码" />
     <MESSAGE value="LeetCode代码-LRU-O(1)级别实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="LeetCode代码-LRU-O(1)级别实现" />
+    <MESSAGE value="链表反转和链表反转2" />
+    <option name="LAST_COMMIT_MESSAGE" value="链表反转和链表反转2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -462,28 +506,28 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java</url>
-          <line>139</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_70ClimbStairs.java</url>
+          <line>18</line>
           <properties />
-          <option name="timeStamp" value="52" />
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java</url>
-          <line>56</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_70ClimbStairs.java</url>
+          <line>29</line>
           <properties />
-          <option name="timeStamp" value="54" />
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java</url>
-          <line>116</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/InsertSort.java</url>
+          <line>27</line>
           <properties />
-          <option name="timeStamp" value="56" />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java</url>
-          <line>53</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/InsertSort.java</url>
+          <line>33</line>
           <properties />
-          <option name="timeStamp" value="57" />
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -532,12 +576,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
         </state>
       </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/other/BinarySearch.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -551,13 +595,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/bo/ListNode.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Skiplist_1206.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Median.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -569,13 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Letter_phone_number_17.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -600,17 +630,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Letter_phone_number_17.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_903DISequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Skiplist_1206.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_2AddTowNum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="5" selection-start-line="12" selection-start-column="3" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="270">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        <state relative-caret-position="1674">
+          <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LFUCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -624,17 +686,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LFUCache.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_53MaxSum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01Upgrade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_70ClimbStairs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_92ListReversal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+          <folding>
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_206ListReversal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="228">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#307#308#0" expanded="true" />
             <element signature="e#338#339#0" expanded="true" />
@@ -642,13 +736,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_92ListReversal.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_767RefactorString.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+        <state relative-caret-position="360">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_5MaxPalindromeString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/InsertSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding>
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
           </folding>
         </state>
       </provider>

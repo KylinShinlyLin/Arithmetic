@@ -1,12 +1,12 @@
-package com.zsl.test;
+package com.zsl.leetcode;
 
 import java.util.HashMap;
 
 /**
- * 0-1背包问题
+ * 0-1背包问题 背包中最大价值
  * Create by ZengShiLin on 2019-05-03
  */
-public class Knapsack01 {
+public class Knapsack01Upgrade {
 
     /**
      * 这里的记忆
@@ -15,8 +15,8 @@ public class Knapsack01 {
     private HashMap<String, Integer> memo = new HashMap<>();
 
     /**
-     * @param w
-     * @param v
+     * @param w 每个物品的大小
+     * @param v 物品价值
      * @param C 代表背包大小
      * @return
      */
@@ -31,7 +31,7 @@ public class Knapsack01 {
      *
      * @param w     物品大小维度数组
      * @param v     物品价值维度数组
-     * @param index
+     * @param index 第几次放入 +1
      * @param C
      * @return
      */
@@ -46,7 +46,7 @@ public class Knapsack01 {
 
         //不放入背包
         int res = bestValue(w, v, index - 1, C);
-        if (C >= w[index]) {
+        if (C >= w[index]) { // 判断背包空间是否还充足
             //不放和放入做比较看哪个大（递归剩余空间大小）
             res = Math.max(res, v[index] + bestValue(w, v, index - 1, C - w[index]));
         }
@@ -56,7 +56,7 @@ public class Knapsack01 {
     }
 
     public static void main(String[] args) {
-        Knapsack01 test = new Knapsack01();
+        Knapsack01Upgrade test = new Knapsack01Upgrade();
         System.out.println("价值最大：" + test.knapsack(new int[]{1, 2, 3}, new int[]{6, 10, 12}, 5));
     }
 

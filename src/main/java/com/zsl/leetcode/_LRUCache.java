@@ -47,20 +47,8 @@ public class _LRUCache {
 
     public static void main(String[] args) {
         _LRUCache cache = new _LRUCache(3);
-        cache.put(2, 2);
-        System.out.println("[]");
-        cache.put(1, 1);
-        System.out.println("[]");
+        cache.put(2, 1);
         System.out.println(cache.get(2));
-        System.out.println(cache.get(1));
-        System.out.println(cache.get(2));
-        cache.put(3, 3);
-        System.out.println("[]");
-        cache.put(4, 4);
-        System.out.println("[]");
-        System.out.println(cache.get(3));
-        System.out.println(cache.get(2));
-        System.out.println(cache.get(1));
         System.out.println(cache.get(4));
     }
 
@@ -119,7 +107,7 @@ public class _LRUCache {
             temp = head.next;
             head.next = node;
             head.next.next = temp;
-            if (node == tail.next) {
+            if (node == tail.next && total > 1) {
                 tail.next = tail.next.pre;
                 tail.next.next = null;
             }
