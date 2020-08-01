@@ -19,45 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61252bc2-c67e-42e3-a24b-9a69a9f2eaf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/ByteDance/字典序的第K小数字_440.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/thread/H2O生成_1117.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/thread/交替打印FooBar_1115.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/thread/多线程顺序打印_1114.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/thread/打印零与奇偶数_1116.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="61252bc2-c67e-42e3-a24b-9a69a9f2eaf1" name="Default Changelist" comment="提交代码">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/多数元素.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/链表插入排序.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/非负整数最少跳跃.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BiggestIncrease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/BiggestIncrease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/BinaryTreeAllPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/BinaryTreeAllPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/House_Robber_198.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/House_Robber_198.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/InsertSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/InsertSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Integer_Break_343.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Integer_Break_343.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Knapsack01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Knapsack01Upgrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Knapsack01Upgrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/LCP_3_robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/LCP_3_robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Letter_phone_number_17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Letter_phone_number_17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Median.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Median.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/MostElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/MostElements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Move_Zeroes_283.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Move_Zeroes_283.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/OrderArraySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/OrderArraySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/OverturnWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/OverturnWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Partition_Equal_Subset_Sum_416.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Partition_Equal_Subset_Sum_416.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Skiplist_1206.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/Skiplist_1206.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_16ThreeSumClosest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_16ThreeSumClosest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_1SumTowNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_1SumTowNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_206ListReversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_206ListReversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_2AddTowNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_2AddTowNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_3sum_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_3sum_15.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_53MaxSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_53MaxSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_5MaxPalindromeString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_5MaxPalindromeString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_70ClimbStairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_70ClimbStairs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_767RefactorString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_767RefactorString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_903DISequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_903DISequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_92ListReversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_92ListReversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LFUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_LFUCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_LRUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_LRUCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/_SumTowNumMulti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_SumTowNumMulti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zsl/leetcode/House_Robber_198.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zsl/leetcode/Integer_Break_343.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,26 +45,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>index2</find>
-      <find>&quot;</find>
-      <find>int</find>
-      <find>total</find>
-      <find>Integer</find>
-      <find>key</find>
-      <find>无重复</find>
-      <find>paths</find>
-      <find>true</find>
-      <find>后面</find>
-      <find>后序</find>
-      <find>复</find>
-      <find>前序</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>'</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -140,13 +89,13 @@
       <recent name="com.zsl.leetcode" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MDCtest">
-    <configuration name="InsertSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.other.InsertSort" />
+  <component name="RunManager">
+    <configuration name="多数元素" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.KuGou.多数元素" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zsl.leetcode.other.*" />
+          <option name="PATTERN" value="com.zsl.leetcode.KuGou.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Knapsack01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.other.Knapsack01" />
+    <configuration name="非负整数最少跳跃" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.KuGou.非负整数最少跳跃" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zsl.leetcode.other.*" />
+          <option name="PATTERN" value="com.zsl.leetcode.KuGou.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -193,12 +142,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="_70ClimbStairs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.other._70ClimbStairs" />
+    <configuration name="最小区间_632" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Daily.最小区间_632" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zsl.leetcode.other.*" />
+          <option name="PATTERN" value="com.zsl.leetcode.Daily.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -208,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.非负整数最少跳跃" />
+        <item itemvalue="Application.多数元素" />
+        <item itemvalue="Application.最小区间_632" />
         <item itemvalue="Application.MDCtest" />
         <item itemvalue="Application.VolatileTest" />
-        <item itemvalue="Application.InsertSort" />
-        <item itemvalue="Application._70ClimbStairs" />
-        <item itemvalue="Application.Knapsack01" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +194,7 @@
       <workItem from="1584286455037" duration="1058000" />
       <workItem from="1590585166953" duration="671000" />
       <workItem from="1590941111971" duration="626000" />
-      <workItem from="1596263363629" duration="5325000" />
+      <workItem from="1596263363629" duration="10833000" />
     </task>
     <task id="LOCAL-00001" summary="LeetCode代码">
       <created>1581426079057</created>
@@ -289,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584286566670</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="提交代码">
+      <created>1596268756958</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596268756958</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +272,48 @@
     <MESSAGE value="提交代码" />
     <option name="LAST_COMMIT_MESSAGE" value="提交代码" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="2565" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1596274134242">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state x="2565" y="215" key="#com.intellij.ide.util.MemberChooser/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274134242" />
+    <state width="1637" height="307" key="GridCell.Tab.0.bottom" timestamp="1596274026693">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
+    <state width="1637" height="307" key="GridCell.Tab.0.center" timestamp="1596274026692">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026692" />
+    <state width="1637" height="307" key="GridCell.Tab.0.left" timestamp="1596274026692">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026692" />
+    <state width="1637" height="307" key="GridCell.Tab.0.right" timestamp="1596274026693">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
+    <state width="1637" height="307" key="GridCell.Tab.1.bottom" timestamp="1596274026693">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
+    <state width="1637" height="307" key="GridCell.Tab.1.center" timestamp="1596274026693">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
+    <state width="1637" height="307" key="GridCell.Tab.1.left" timestamp="1596274026693">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
+    <state width="1637" height="307" key="GridCell.Tab.1.right" timestamp="1596274026693">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1596268760900">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596268760900" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -333,6 +331,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_70ClimbStairs.java</url>
           <line>29</line>
           <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
