@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61252bc2-c67e-42e3-a24b-9a69a9f2eaf1" name="Default Changelist" comment="提交代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/多数元素.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/链表插入排序.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/非负整数最少跳跃.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/二叉树展开为链表_114.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zsl/leetcode/House_Robber_198.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zsl/leetcode/Integer_Break_343.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/非负整数最少跳跃.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/非负整数数组最少跳跃.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,22 +86,9 @@
       <recent name="com.zsl.leetcode" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MDCtest">
     <configuration name="多数元素" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.KuGou.多数元素" />
-      <module name="arithmetic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zsl.leetcode.KuGou.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="非负整数最少跳跃" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.KuGou.非负整数最少跳跃" />
       <module name="arithmetic" />
       <extension name="coverage">
         <pattern>
@@ -142,6 +126,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="非负整数数组最少跳跃" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.KuGou.非负整数数组最少跳跃" />
+      <module name="arithmetic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zsl.leetcode.KuGou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="最小区间_632" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Daily.最小区间_632" />
       <module name="arithmetic" />
@@ -157,7 +154,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.非负整数最少跳跃" />
         <item itemvalue="Application.多数元素" />
         <item itemvalue="Application.最小区间_632" />
         <item itemvalue="Application.MDCtest" />
@@ -194,7 +190,9 @@
       <workItem from="1584286455037" duration="1058000" />
       <workItem from="1590585166953" duration="671000" />
       <workItem from="1590941111971" duration="626000" />
-      <workItem from="1596263363629" duration="10833000" />
+      <workItem from="1596263363629" duration="11730000" />
+      <workItem from="1596285083875" duration="628000" />
+      <workItem from="1596346441014" duration="385000" />
     </task>
     <task id="LOCAL-00001" summary="LeetCode代码">
       <created>1581426079057</created>
@@ -245,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596268756958</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="提交代码">
+      <created>1596274268146</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596274268146</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +269,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="LeetCode代码" />
@@ -277,42 +283,42 @@
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
     <state x="2565" y="215" key="#com.intellij.ide.util.MemberChooser/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274134242" />
-    <state width="1637" height="307" key="GridCell.Tab.0.bottom" timestamp="1596274026693">
+    <state width="1637" height="285" key="GridCell.Tab.0.bottom" timestamp="1596276545181">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.0.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
-    <state width="1637" height="307" key="GridCell.Tab.0.center" timestamp="1596274026692">
+    <state width="1637" height="285" key="GridCell.Tab.0.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545181" />
+    <state width="1637" height="285" key="GridCell.Tab.0.center" timestamp="1596276545181">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.0.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026692" />
-    <state width="1637" height="307" key="GridCell.Tab.0.left" timestamp="1596274026692">
+    <state width="1637" height="285" key="GridCell.Tab.0.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545181" />
+    <state width="1637" height="285" key="GridCell.Tab.0.left" timestamp="1596276545181">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.0.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026692" />
-    <state width="1637" height="307" key="GridCell.Tab.0.right" timestamp="1596274026693">
+    <state width="1637" height="285" key="GridCell.Tab.0.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545181" />
+    <state width="1637" height="285" key="GridCell.Tab.0.right" timestamp="1596276545181">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.0.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
-    <state width="1637" height="307" key="GridCell.Tab.1.bottom" timestamp="1596274026693">
+    <state width="1637" height="285" key="GridCell.Tab.0.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545181" />
+    <state width="1637" height="307" key="GridCell.Tab.1.bottom" timestamp="1596276545176">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
-    <state width="1637" height="307" key="GridCell.Tab.1.center" timestamp="1596274026693">
+    <state width="1637" height="307" key="GridCell.Tab.1.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545176" />
+    <state width="1637" height="307" key="GridCell.Tab.1.center" timestamp="1596276545176">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
-    <state width="1637" height="307" key="GridCell.Tab.1.left" timestamp="1596274026693">
+    <state width="1637" height="307" key="GridCell.Tab.1.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545176" />
+    <state width="1637" height="307" key="GridCell.Tab.1.left" timestamp="1596276545175">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
-    <state width="1637" height="307" key="GridCell.Tab.1.right" timestamp="1596274026693">
+    <state width="1637" height="307" key="GridCell.Tab.1.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545175" />
+    <state width="1637" height="307" key="GridCell.Tab.1.right" timestamp="1596276545176">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274026693" />
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1596268760900">
+    <state width="1637" height="307" key="GridCell.Tab.1.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545176" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1596274279709">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596268760900" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274279709" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -331,26 +337,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_70ClimbStairs.java</url>
           <line>29</line>
           <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

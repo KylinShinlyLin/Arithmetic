@@ -8,7 +8,7 @@ package com.zsl.leetcode.KuGou;
  * @version 1.0
  * @date 2020/8/1 17:09
  */
-public class 非负整数最少跳跃 {
+public class 非负整数数组最少跳跃 {
 
     static class Solution {
         public int jump(int[] nums) {
@@ -28,7 +28,7 @@ public class 非负整数最少跳跃 {
     }
 
     public static void main(String[] args) {
-        非负整数最少跳跃.Solution test = new 非负整数最少跳跃.Solution();
+        非负整数数组最少跳跃.Solution test = new 非负整数数组最少跳跃.Solution();
         System.out.println(test.jump(new int[]{2, 3, 1, 1, 4}));
     }
 }
