@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 /**
+ * 区间最小值，贪心算法
+ *
  * @author ZengShiLin
  * @version 1.0
  * @date 2020/8/1 16:06
@@ -20,11 +22,13 @@ public class 最小区间_632 {
             int max = Integer.MIN_VALUE;
             int size = nums.size();
             int[] next = new int[size];
+            //最小堆（目的是找到每个列表第一位的最大值）（因为每个列表是有序的）
             PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(index -> nums.get(index).get(next[index])));
             for (int i = 0; i < size; i++) {
                 priorityQueue.offer(i);
                 max = Math.max(max, nums.get(i).get(0));
             }
+            //和第一位的最大值比较（比较range范围），找到能满足条件的最小值（贪心算法）
             while (true) {
                 int minIndex = priorityQueue.poll();
                 int curRange = max - nums.get(minIndex).get(next[minIndex]);

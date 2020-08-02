@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61252bc2-c67e-42e3-a24b-9a69a9f2eaf1" name="Default Changelist" comment="提交代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/二叉树展开为链表_114.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/非负整数最少跳跃.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/非负整数数组最少跳跃.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/最小区间_632.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +190,8 @@
       <workItem from="1590941111971" duration="626000" />
       <workItem from="1596263363629" duration="11730000" />
       <workItem from="1596285083875" duration="628000" />
-      <workItem from="1596346441014" duration="385000" />
+      <workItem from="1596346441014" duration="714000" />
+      <workItem from="1596359229638" duration="2747000" />
     </task>
     <task id="LOCAL-00001" summary="LeetCode代码">
       <created>1581426079057</created>
@@ -250,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596274268146</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="提交代码">
+      <created>1596346849644</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596346849644</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,10 +321,10 @@
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
     <state width="1637" height="307" key="GridCell.Tab.1.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545176" />
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1596274279709">
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1596346851808">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596274279709" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596346851808" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
