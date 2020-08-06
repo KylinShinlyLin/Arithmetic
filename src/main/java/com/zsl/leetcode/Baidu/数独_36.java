@@ -3,6 +3,8 @@ package com.zsl.leetcode.Baidu;
 import java.util.HashMap;
 
 /**
+ * 其实感觉可以使用一个HashMap
+ *
  * @author ZengShiLin
  * @version 1.0
  * @date 2020/8/2 21:25

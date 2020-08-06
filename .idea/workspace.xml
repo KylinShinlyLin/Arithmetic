@@ -20,12 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61252bc2-c67e-42e3-a24b-9a69a9f2eaf1" name="Default Changelist" comment="提交代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Baidu/排列组合_77_回溯.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Baidu/排列组合_77_字典排序.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Baidu/数独_36.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Baidu/最大交换_670.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Baidu/最大交换_670_优先队列.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/回文对_336.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/回文对_暴力解法_336.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/字符串相加_415.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/vip/最后一个单词的长度_58.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/vip/有效的括号_20.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/vip/链表求和.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Baidu/数独_36.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Baidu/数独_36.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,7 @@
       <recent name="com.zsl.leetcode" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.最大交换_670_优先队列">
+  <component name="RunManager" selected="Application.有效的括号_20">
     <configuration name="多数元素" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.KuGou.多数元素" />
       <module name="arithmetic" />
@@ -128,6 +130,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="有效的括号_20" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.vip.有效的括号_20" />
+      <module name="arithmetic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zsl.leetcode.vip.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="最小区间_632" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Daily.最小区间_632" />
       <module name="arithmetic" />
@@ -141,36 +156,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="最大交换_670_优先队列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Baidu.最大交换_670_优先队列" />
-      <module name="arithmetic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zsl.leetcode.Baidu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="排列组合_77_回溯" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zsl.leetcode.Baidu.排列组合_77_回溯" />
-      <module name="arithmetic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zsl.leetcode.Baidu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.MDCtest" />
+      <item itemvalue="Application.多数元素" />
+      <item itemvalue="Application.最小区间_632" />
+      <item itemvalue="Application.有效的括号_20" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.最大交换_670_优先队列" />
-        <item itemvalue="Application.排列组合_77_回溯" />
+        <item itemvalue="Application.有效的括号_20" />
         <item itemvalue="Application.多数元素" />
         <item itemvalue="Application.最小区间_632" />
         <item itemvalue="Application.MDCtest" />
@@ -209,7 +203,13 @@
       <workItem from="1596263363629" duration="11730000" />
       <workItem from="1596285083875" duration="628000" />
       <workItem from="1596346441014" duration="714000" />
-      <workItem from="1596359229638" duration="7947000" />
+      <workItem from="1596359229638" duration="9652000" />
+      <workItem from="1596418136973" duration="26000" />
+      <workItem from="1596463717129" duration="1419000" />
+      <workItem from="1596508969184" duration="46000" />
+      <workItem from="1596721373695" duration="186000" />
+      <workItem from="1596721596485" duration="9000" />
+      <workItem from="1596721633213" duration="4671000" />
     </task>
     <task id="LOCAL-00001" summary="LeetCode代码">
       <created>1581426079057</created>
@@ -281,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596373042558</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="提交代码">
+      <created>1596378138123</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1596378138123</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,46 +317,58 @@
     <option name="LAST_COMMIT_MESSAGE" value="提交代码" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2214" y="164" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596378536320">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state x="2214" y="164" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596378536320" />
     <state x="2565" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1596375586517">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
     <state x="2565" y="215" key="#com.intellij.ide.util.MemberChooser/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596375586517" />
-    <state width="1637" height="285" key="GridCell.Tab.0.bottom" timestamp="1596373929246">
+    <state width="1493" height="221" key="GridCell.Tab.0.bottom" timestamp="1596725490403">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630386" />
+    <state width="1493" height="221" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1596725490403" />
+    <state width="1493" height="221" key="GridCell.Tab.0.center" timestamp="1596725490403">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630385" />
+    <state width="1493" height="221" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1596725490403" />
+    <state width="1493" height="221" key="GridCell.Tab.0.left" timestamp="1596725490403">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630385" />
+    <state width="1493" height="221" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1596725490403" />
+    <state width="1493" height="221" key="GridCell.Tab.0.right" timestamp="1596725490403">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.0.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630386" />
+    <state width="1493" height="221" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1596725490403" />
+    <state width="1493" height="251" key="GridCell.Tab.1.bottom" timestamp="1596725092414">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630386" />
+    <state width="1493" height="251" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1596725092414" />
+    <state width="1493" height="251" key="GridCell.Tab.1.center" timestamp="1596725092414">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630386" />
+    <state width="1493" height="251" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1596725092414" />
+    <state width="1493" height="251" key="GridCell.Tab.1.left" timestamp="1596725092414">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630386" />
+    <state width="1493" height="251" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1596725092414" />
+    <state width="1493" height="251" key="GridCell.Tab.1.right" timestamp="1596725092414">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1637" height="307" key="GridCell.Tab.1.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630386" />
+    <state width="1493" height="251" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1596725092414" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1596378142506">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state width="1637" height="285" key="GridCell.Tab.0.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596373929246" />
-    <state width="1637" height="285" key="GridCell.Tab.0.center" timestamp="1596373929246">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state width="1637" height="285" key="GridCell.Tab.0.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596373929246" />
-    <state width="1637" height="285" key="GridCell.Tab.0.left" timestamp="1596373929246">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state width="1637" height="285" key="GridCell.Tab.0.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596373929246" />
-    <state width="1637" height="285" key="GridCell.Tab.0.right" timestamp="1596373929246">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state width="1637" height="285" key="GridCell.Tab.0.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596373929246" />
-    <state width="1637" height="307" key="GridCell.Tab.1.bottom" timestamp="1596276545176">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.bottom/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545176" />
-    <state width="1637" height="307" key="GridCell.Tab.1.center" timestamp="1596276545176">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.center/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545176" />
-    <state width="1637" height="307" key="GridCell.Tab.1.left" timestamp="1596276545175">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.left/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545175" />
-    <state width="1637" height="307" key="GridCell.Tab.1.right" timestamp="1596276545176">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state width="1637" height="307" key="GridCell.Tab.1.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596276545176" />
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1596373044076">
-      <screen x="1920" y="0" width="1680" height="1020" />
-    </state>
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596373044076" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596378142506" />
     <state x="2416" y="235" key="run.anything.popup" timestamp="1596377427051">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
