@@ -1,6 +1,7 @@
 package com.zsl.leetcode.vip;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -43,5 +44,22 @@ public class 有效的括号_20 {
     public static void main(String[] args) {
         有效的括号_20 test = new 有效的括号_20();
         System.out.println(test.isValid("({{}})[]"));
+    }
+
+    class Solution2 {
+            public int[] twoSum(int[] nums, int target) {
+                Map<Integer, Integer> numMap = new HashMap<>(nums.length);
+                for (int index = 0; index < nums.length; index++) {
+                    numMap.put(nums[index], index);
+                }
+                for (int index = 0; index < nums.length; index++) {
+                    int residue = target - nums[index];
+                    Integer resIndex = numMap.get(residue);
+                    if (resIndex != index) {
+                        return new int[]{resIndex, index};
+                    }
+                }
+                return null;
+            }
     }
 }

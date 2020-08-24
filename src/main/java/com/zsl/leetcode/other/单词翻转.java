@@ -8,10 +8,10 @@ package com.zsl.leetcode.other;/**
  * @author: ZengShiLin
  * @create: 2020-02-11 下午17:45
  **/
-public class OverturnWord {
+public class 单词翻转 {
 
     public static void main(String[] args) {
-        OverturnWord word = new OverturnWord();
+        单词翻转 word = new 单词翻转();
         // word.reverseWords(new char[]{'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'});
         word.reverseWords(new char[]{'w', 'o', 'r', 'l', 'd', ' ', 'h', 'e', 'l', 'l', 'o'});
     }
