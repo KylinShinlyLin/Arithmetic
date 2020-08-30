@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61252bc2-c67e-42e3-a24b-9a69a9f2eaf1" name="Default Changelist" comment="提交代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/CGB/LRU缓存机制_146.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/CGB/数组最大和_42.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/CGB/股票最大利润_63.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/反转字符串中的单词_557.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/Daily/重复的字符串_459.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/灯泡开关_672.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/祖玛游戏_488.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/打家劫舍_198.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/两数相加_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zsl/leetcode/KuGou/反转链表_offer24.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +227,7 @@
       <workItem from="1597802860906" duration="36000" />
       <workItem from="1598280840486" duration="3150000" />
       <workItem from="1598539985187" duration="1198000" />
-      <workItem from="1598788954039" duration="5380000" />
+      <workItem from="1598788954039" duration="7074000" />
     </task>
     <task id="LOCAL-00001" summary="LeetCode代码">
       <created>1581426079057</created>
@@ -340,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597761770782</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="提交代码">
+      <created>1598794477818</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1598794477818</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,10 +423,10 @@
     </state>
     <state width="1637" height="307" key="GridCell.Tab.1.right/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596380630386" />
     <state width="1493" height="251" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1596727930234" />
-    <state x="395" y="228" key="Vcs.Push.Dialog.v2" timestamp="1597761788163">
-      <screen x="0" y="30" width="1536" height="834" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1598794481759">
+      <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1596378142506" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.30.1536.834/1920.0.1680.1020@1920.0.1680.1020" timestamp="1598794481759" />
     <state x="395" y="228" key="Vcs.Push.Dialog.v2/0.30.1536.834@0.30.1536.834" timestamp="1597761788163" />
     <state x="2416" y="235" key="run.anything.popup" timestamp="1596377427051">
       <screen x="1920" y="0" width="1680" height="1020" />
@@ -440,11 +441,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_2AddTowNum.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/zsl/leetcode/other/_70ClimbStairs.java</url>
           <line>18</line>
